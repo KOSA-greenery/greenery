@@ -3,31 +3,19 @@ body {
 }
 
 .icon-close {
-    position: absolute;
-    top: 20px;
-    right: -190px;
     cursor: pointer;
     width: 30px;
 }
 
-/* .text-login {
-    display: inline-block;
-    position: relative;
-} */
-
 .container-login {
-    display: flex;
+    display: inline-flex;
     justify-content: space-between;
     width: 470px;
-    margin: 0 auto;
-}
-
-.container-login img {
-    text-align: right;
+    margin: 20px auto;
 }
 
 .container-login h2 {
-    text-align: center;
+    margin: auto;
 }
 
 .text-introduce {
@@ -72,15 +60,13 @@ body {
     font-size: 14px;
 }
 
-.box-signup div:nth-of-type(1) {
-    text-align: left;
-}
-
-.box-signup div:nth-of-type(2) {
-    text-align: right;
+.box-signup div {
+    display: flex;
+    align-items: center;
 }
 
 .box-signup img {
-    width: 8px;
+    margin-left: 5px;
+    width: 7px;
 }
 
