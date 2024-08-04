@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="signup.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+    <div class="container-signup">
+        <h2>회원가입</h2>
+        <img class="icon-close" src="images/xIcon.png">
+    </div>
+    
+    <div class="text-introduce">그리너리 회원이 되어 다양한 혜택을 경험해 보세요!</div>
+
+    <form class="form-signup" action="서버" method="POST">
+            <div class="form-id">
+                <input class="input input1" type="text" placeholder="아이디 입력(6-20자)" required>
+                <button class="btn btn1"type="button">중복확인</button>
+            </div>
+            
+            <input class="input input2" type="password" placeholder="비밀번호 입력(문자, 숫자, 특수문자 포함 8-20자)" required>
+            <input class="input input3" type="password" placeholder="비밀번호 재입력" required>
+            <input class="input input4" type="text" placeholder="이름을 입력해주세요." required>
+            <input class="input input5" type="text" placeholder="휴대폰 번호 입력('-'제외 11자리 입력)" required>
+
+            <div class="form-email">
+                <input class="input input6" type="email" placeholder="이메일주소" required>
+                <input class="input input7" type="email" placeholder="@직접입력" required>
+            </div>
+
+            <div class="form-address">
+                <input class="input input8" type="text" placeholder="우편번호" required>
+                <button class="btn btn2" type="button">우편번호 찾기</button>
+            </div>
+            
+            <input class="input input9" type="text" placeholder="도로명 주소" required>
+            <input class="input input10" type="text" placeholder="상세 주소" required>
+            
+            <input class="btn btn3" type="button" value="회원가입">
+    </form>
+
+</body>
+</html>

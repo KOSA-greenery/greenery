@@ -1,0 +1,173 @@
+body {
+    text-align: center;
+}
+
+.icon-close {
+    cursor: pointer;
+    width: 30px;
+}
+
+.container-signup {
+    display: inline-flex;
+    justify-content: space-between;
+    width: 470px;
+    margin: 20px auto;
+}
+
+.container-signup h2 {
+    margin: auto;
+}
+
+.text-introduce {
+    margin: 0 auto;
+    border-top: 2px solid lightgray;
+    width: 570px;
+    padding: 35px;
+    color: grey;
+}
+
+.form-signup {
+    width: 470px;
+    margin: 0 auto;
+}
+
+.input {
+    height: 55px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    font-size: 16px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.input2, .input3,
+.input4, .input5,
+.input9, .input10,
+.input10 {
+    width: 100%;
+}
+
+.form-id,
+.form-email,
+.form-address {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input1 {
+    width: 70%;
+}
+
+.input6,
+.input7 {
+    width: 48%;
+}
+
+.input8 {
+    width: 50%;
+}
+
+.btn {
+    height: 55px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.btn1 {
+    width: 100px;
+    background-color: #CFF7D3;
+}
+
+.btn2 {
+    width: 200px;
+    background-color: #CFF7D3;
+}
+
+.btn3 {
+    width: 470px;
+    background-color: #CDE9E1;
+}
+
+/* 
+.form-id,
+.form-email,
+.form-address1 {
+    width: 100%;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+} */
+
+
+
+/* .form-signup {
+    width: 470px;
+    margin: 0 auto;
+}
+
+.form-signup input {
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    font-size: 16px;
+    padding-left: 10px;
+}
+
+.form-id,
+.form-email,
+.form-address1 {
+    width: 100%;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.form-password input,
+.form-address2 input {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.form-id input {
+    width: 340px;
+    height: 55px;
+}
+
+.form-id button {
+    cursor: pointer;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #CFF7D3;
+}
+
+.form-email input {
+    width: 215px;
+    height: 55px;
+    box-sizing: border-box;
+}
+
+.form-address1 input {
+    width: 240px;
+    height: 55px;
+    box-sizing: border-box;
+}
+
+.form-address1 button {
+    cursor: pointer;
+    width: 200px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #CFF7D3;
+} */
