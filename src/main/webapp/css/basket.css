@@ -1,0 +1,192 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica', 'Noto Sans KR', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+body {
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Helvetica', 'Noto Sans KR', sans-serif;
+}
+h1 {
+    width: 75%;
+    margin: 120px auto 30px;    
+}
+h2 {
+    margin: 20px;
+    text-align: center;
+}
+.basket {
+    display: flex; /* 수평 정렬 */
+    width: 75%; /* 전체 너비 */
+    margin: auto;
+}
+
+.product {
+    margin: 30px 0;
+    padding-bottom: 30px;
+    border-bottom: 1px solid gray;
+}
+
+.product-list{
+    margin: 0 200px 0 0;
+    width: 100%;
+    justify-content: space-between;
+}
+
+
+.product-header {
+    /* order: -1; */
+    display: flex;
+    justify-content: space-between; /* 양쪽 끝으로 배치 */
+    align-items: center; /* 세로 중앙 정렬 */
+    margin-bottom: 10px;
+}
+
+.product-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.product-label {
+    margin: 0 30px 0 0;
+}
+
+.product-quantity {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 30px 0 0 ;
+    width: 100px;
+    justify-content: space-between;
+}
+.product-quantity button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 30px;
+    height: 30px;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-info{
+    position: sticky;
+    top: 200px;
+    border: 1px solid #ccc; /* 회색 테두리 */
+    padding: 10px; /* 내부 여백 */
+    height: 400px; /* 고정된 높이 */
+
+}
+
+#payment-info-body{
+    text-align: center;
+    justify-content: space-between;
+}
+
+.basket-list-header {
+    display: flex;      /* 요소 수평 정렬 */
+    justify-content: space-between; /* 양쪽 끝으로 배치 */
+    align-items: center; /* 세로 중앙 정렬 */
+    margin-bottom: 20px;
+}
+
+ .allchk-label {             /* 전체선택 체크박스 */
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    font-size: 16px;
+
+}
+
+.button-group {
+    display: flex; /* 버튼 그룹을 수평으로 정렬 */
+}
+
+button {
+    background-color: white; /* 버튼 배경색 */
+    color: black; /* 버튼 글자색 */
+    border: 1px solid black;
+    padding: 0 10px;
+    cursor: pointer;
+    margin: 0 10px; /* 버튼 간의 간격 */
+    font-size: 12px; /* 버튼 글자 크기 */
+}
+
+button:hover {
+    background-color: papayawhip; /* 호버 시 색상 변경 */
+}
+#order-button {
+    background-color: #CFF7D3;
+    border: none;
+    width: 85%;
+    margin: 0px;
+}
+#order-button:hover{
+    background-color: papayawhip;
+}
+#hr-topLine {
+    border: 1px solid black;
+    margin: 0 0 60px 0;
+}
+hr {
+    border: 1px solid #ccc;     /* 회색 */
+    margin: 0 10px;
+}
+.payment-info-body-content2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+.coupon {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+.totalPrice {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px;
+    font-size: 20px;
+}
+#totalPrice-num{
+    color: red;
+    align-items: center; /* 세로 중앙 정렬 */
+}
+.payment-info-body-content1 {
+    margin: 50px 0;
+}
+#product-order {
+    margin: 25px 0;
+
+}
+a {
+    text-decoration: none;
+    color: #02542D;
+    font-size: 15px;
+    font-weight: bold;
+}
+img {
+    width: 130px;
+    height: 130px;
+}
+.delete-icon:hover {
+    background-color: papayawhip;
+}
+#sum_p_price {
+    width: 200px;
+    align-items: center; /* 세로 중앙 정렬 */
+}
