@@ -17,13 +17,50 @@ body {
     font-family: 'Helvetica', 'Noto Sans KR', sans-serif;
 }
 h1 {
-    width: 75%;
-    margin: 120px auto 30px;
+    margin: 120px 0 30px auto;
 }
 h2 {
-    margin: 20px;
-    text-align: center;
+    margin: 14px;
+    text-align: left;
 }
+
+.checkbox-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+/* 기본 체크박스 스타일 제거 */
+input[type="checkbox"] {
+    appearance: none; /* 기본 스타일 제거 */
+    width: 20px; /* 너비 */
+    height: 20px; /* 높이 */
+    border: 1px solid #ccc; /* 테두리 색상 */
+    cursor: pointer; /* 포인터 커서 */
+    margin-right: 8px;
+}
+
+/* 체크 시 배경과 체크 표시 */
+  input[type="checkbox"]:checked {
+    background-color: #069369; /* 체크 시 배경색 */
+    border-color: #069369; /* 체크 시 테두리 색상 */
+} 
+
+input[type="checkbox"]:checked::after {
+    content: '';
+    display: block;
+    width: 13px; /* 이미지 크기 */
+    height: 13px; /* 이미지 크기 */
+    background-image: url('../images/check-icon.png'); /* 체크 표시 이미지 경로 */
+    background-size: contain; /* 이미지 크기 조정 */
+    background-repeat: no-repeat; /* 이미지 반복 방지 */
+    margin-top: 3px;
+    margin-left: 2px;
+}
+
+
+
 .basket {
     display: flex; /* 수평 정렬 */
     width: 75%; /* 전체 너비 */
@@ -33,7 +70,7 @@ h2 {
 .product {
     margin: 30px 0;
     padding-bottom: 30px;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #ccc;
 }
 
 .product-list{
@@ -44,7 +81,6 @@ h2 {
 
 
 .product-header {
-    /* order: -1; */
     display: flex;
     justify-content: space-between; /* 양쪽 끝으로 배치 */
     align-items: center; /* 세로 중앙 정렬 */
@@ -54,11 +90,15 @@ h2 {
 .product-body {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    
+    align-items: center;   
 }
 .product-label {
-    margin: 0 30px 0 0;
+    margin: 0 10px 95px 0;  
+}
+.product-description {
+	margin-top: 8px;
+	font-size: 12px;
+	color: #B2B2B2;
 }
 
 .product-quantity {
@@ -76,12 +116,15 @@ h2 {
     border: none;
     cursor: pointer;
     font-size: 16px;
-    width: 30px;
-    height: 30px;
+    width: 22px;
+    height: 22px;
     transition: background-color 0.3s, color 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.product-price {
+	font-size: 22px;	
 }
 
 .payment-info{
@@ -105,11 +148,8 @@ h2 {
     margin-bottom: 20px;
 }
 
- .allchk-label {             /* 전체선택 체크박스 */
-    display: flex;
-    align-items: center; /* 세로 중앙 정렬 */
-    font-size: 16px;
-
+ input[type="checkbox"] {
+	margin-right: 10px;
 }
 
 .button-group {
@@ -117,60 +157,61 @@ h2 {
 }
 
 button {
-    background-color: white; /* 버튼 배경색 */
+    background-color: transparent;
     color: black; /* 버튼 글자색 */
-    border: 1px solid black;
-    padding: 0 10px;
+    border: 0.5px solid black;
+    padding: 2px 18px 3px 18px;
     cursor: pointer;
-    margin: 0 10px; /* 버튼 간의 간격 */
-    font-size: 12px; /* 버튼 글자 크기 */
+    /*margin: 0 10px;  버튼 간의 간격 */
+    font-size: 13px; /* 버튼 글자 크기 */
 }
-
-button:hover {
-    background-color: papayawhip; /* 호버 시 색상 변경 */
+.apply-coupon{
+	background-color: #CFF7D3;
+	color: #0F5E32;
+	border: none;
+	border-radius: 5px;
+	padding: 8px 40px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	font-size: 14px
 }
-#order-button {
+#order-button { /* 결제정보 버튼 */
     background-color: #CFF7D3;
     border: none;
     width: 85%;
     margin: 0px;
-}
-#order-button:hover{
-    background-color: papayawhip;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
 }
 #hr-topLine {
-    border: 1px solid black;
+    border: 1.5px solid black;
     margin: 0 0 60px 0;
 }
-hr {
-    border: 1px solid #ccc;     /* 회색 */
-    margin: 0 10px;
-}
-.payment-info-body-content2 {
+.payment-info-body-content2,
+.delivery,
+.coupon  {
     display: flex;
     justify-content: space-between;
-    margin: 0 20px;
-}
-.coupon {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 20px;
+    margin: 0 14px;
+    margin-top: 15px;
 }
 .totalPrice {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     margin: 0 20px;
-    font-size: 20px;
+    font-size: 16px;
 }
 #totalPrice-num{
-    color: red;
-    align-items: center; /* 세로 중앙 정렬 */
+	font-weight: bold;
+	color: #d9534f;
+    font-size: 20px;
 }
 .payment-info-body-content1 {
-    margin: 50px 0;
+    margin: 38px 0;
 }
 #product-order {
-    margin: 25px 0;
+    margin: 25px 0 10px 0;
 
 }
 a {
@@ -181,14 +222,27 @@ a {
 }
 img {
     width: 130px;
-    height: 130px;
-}
-.delete-icon:hover {
-    background-color: papayawhip;
+	height: 130px;
+	object-fit: cover;
 }
 #sum_p_price {
-    width: 200px;
+	display: flex;
     align-items: center; /* 세로 중앙 정렬 */
+	justify-content: space-between;
+    width: 200px;
+}
+.coupon-info {
+	margin: 20px 0;
+}
+.coupon-info h1 {
+    display: flex; /* Flexbox 활성화 */
+    justify-content: space-between; /* 왼쪽과 오른쪽에 공간을 균등하게 분배 */
+    align-items: center; /* 수직 중앙 정렬 */
+}
+
+#have-coupon {
+    margin-left: auto; /* 버튼을 오른쪽으로 밀어냄 */
+    margin-top: 15px; /* 버튼을 아래로 내리기 위한 여백 추가 (값 조정 가능) */
 }
 
 .coupon-input-container {
@@ -199,11 +253,12 @@ img {
 .coupon-label {
 	margin-right: 10px;
 	font-size: 16px;
+
 }
 .custom-select {
 	position: relative;
 	flex: 1; 
-	margin-right: 10px;
+	margin-right: 20px;
 }
 select {
 	width: 100%;
@@ -226,4 +281,9 @@ select {
 	top: 50%;
 	transform: translateY(-50%);
 	pointer-events: none;
+}
+
+.divider {
+	border-top: 1px solid #ddd;
+	margin: 5px 0;
 }
