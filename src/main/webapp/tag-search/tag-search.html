@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>상품 리스트</title>
+    <link rel="stylesheet" href="tag-search.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $("#header").load("../header/header.html", function (){
+                console.log("Header loaded successfully.");
+            });
+            $("#footer").load("../footer/footer.html", function (){
+                console.log("Footer loaded successfully.");
+            });
+        });
+    </script>
+</head>
+
+<body>
+<div id="header"></div> <!-- 공통 헤더(상단바) 삽입 -->
+
+    <div class="search-result-text">
+        '<span class="search-term">ooo</span>' 에 대한 검색 결과입니다.
+    </div>
+
+    <div class="result-info">
+        <div class="product-count"><span id="product-count-text">제품</span> <span id="product-count">13</span>개</div>
+        <div class="sort-options">
+            <select class="sort-select">
+                <option value="price-high" selected>가격 높은 순</option>
+                <option value="price-low">가격 낮은 순</option>
+                <option value="coupon">쿠폰순</option>
+            </select>
+
+
+        </div>
+    </div>
+
+<div class="product-container">     <!--상품 리스트 컨테이너-->
+    <div class="product-item">
+        <div class="product-image-container">
+            <img src="https://i.pinimg.com/564x/f8/ff/96/f8ff966cde5a7d5f8ca168d24b817051.jpg" alt="상품 이미지" class="product-image">
+            <div class="product-icons">
+                <span class="icon like-icon"><img src="../images/heart.png" alt="찜하기 아이콘"></span> <!-- 비어있는 하트 -->
+                <span class="icon cart-icon"><img src="../images/cart_icon2.png" alt="장바구니 아이콘"></span> <!-- 장바구니 카트 -->
+                <span class="icon buy-icon"><img src="../images/dollar.png" alt="구매하기 아이콘"></span> <!-- 구매하기 -->
+            </div>
+        </div>
+
+        <div class="product-details">
+            <p class="product-name">저자극 수분크림</p>
+            <p class="product-price"><span class="price-amount">24,000</span>원</p>
+        </div>
+    </div>
+    <div class="product-item">상품 2</div>
+    <div class="product-item">상품 3</div>
+    <div class="product-item">상품 4</div>
+    <div class="product-item">상품 5</div>
+    <div class="product-item">상품 6</div>
+    <div class="product-item">상품 7</div>
+    <div class="product-item">상품 8</div>
+    <div class="product-item">상품 9</div>
+    <div class="product-item">상품 10</div>
+</div>
+<div id="footer"></div> <!-- 공통 footer 삽입 -->
+
+</body>
+</html>
