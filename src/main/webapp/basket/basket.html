@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>장바구니</title>
+    <link rel="stylesheet" href="../css/basket.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function (){
+            $("#header").load("header.html", function (){
+                console.log("Header loaded successfully.");
+            });
+            $("#footer").load("footer.html", function (){
+                console.log("Footer loaded successfully.");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="header"></div> <!-- 공통 헤더(상단바) 삽입 -->
+
+    <h1>장바구니</h1>
+    <div class="basket" id="basket">
+        <div class="product-list">
+            <div class="basket-list-header">
+                <label for="allchk" class="allchk-label"> <!-- 폼요소와 텍스트를 한꺼번에 묶어줌 -->
+                    <input type="checkbox" id="allchk" checked="checked">
+                    전체선택
+                </label>
+                <div class="button-group">
+                    <button type="button" onclick="deleteSelected()">선택 상품 삭제</button>
+                    <button type="button" onclick="clearBasket()">장바구니 비우기</button>
+                </div>
+            </div>
+
+            <hr id="hr-topLine">
+
+            <div id="productList"></div> <!-- 동적으로 상품을 추가할 위치 -->
+
+            <!-- 장바구니에 담은 상품 리스트 -->
+            <div class="product">
+                <div class="product-header">
+                    <p><input type="checkbox" class="product-checkbox"> 항목 1</p>
+                    <div class="basket-delete">
+                        <a href="#" class="abutton">
+                            <img src="../images/X버튼.png" alt="삭제 버튼" class="delete-icon" style="width: 30px; height: 30px;">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-body">
+                    <div class="img"><img src="https://i.pinimg.com/564x/f8/ff/96/f8ff966cde5a7d5f8ca168d24b817051.jpg" alt="상품 이름 1"></div>
+                    <div class="product-label">
+                        <div class="product-name"><span><strong>상품 이름 1</strong></span></div>
+                        <div class="product-description"><span>프레시 블랙 떡솝 120g 3개 세트</span></div>
+                    </div>
+                    <div class="product-quantity">
+                        <button onclick="decrease-quantity()">-</button>
+                        <span class="quantity-number" id="quantity" >1</span>
+                        <button onclick="increase-quantity()">+</button>
+                    </div>
+
+
+                    <div class="product-price"><p><strong>80,000원</strong></p></div>
+                    <hr class="divider">
+                </div>
+            </div>
+            <h1>asdasd</h1>
+            
+        </div>
+
+        <!-- 결제 정보 창 -->
+        <div class="payment-info">
+            <h2>결제정보</h2>
+            <div id="payment-info-body">
+                <div class="payment-info-body-content1">
+                    <div class="payment-info-body-content2"><span>총 주문금액: &nbsp;</span><span id="sumPrice">0원</span></div>
+                    <div class="coupon"><span>쿠폰 할인금액: &nbsp;</span><span id="discount">1,000원</span></div>
+                </div>
+                <hr>
+
+                <div class="payment-info-body-content1">
+                    <div class="totalPrice" id="sum_p_price"><span>총 결제금액:&nbsp;</span><span id="totalPrice-num">20,000</span>원</div>
+                    <div id="goOrder" class="">     <!-- 주문버튼 -->
+                        <div class="clear"></div>
+                        <div id="product-order">
+                            <button id="order-button"><a href="결제하기 페이지url">선택 상품 주문</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="footer"></div> <!-- 공통 footer 삽입 -->
+
+</body>
+</html>
