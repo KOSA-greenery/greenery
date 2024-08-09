@@ -10,24 +10,29 @@
     
     <div class="container-login">
         <h2>로그인</h2>
-        <img class="icon-close" src="images/xIcon.png">
+        <a href="https://naver.com">
+        <img class="icon-close" src="../images/xIcon.png">
+        </a>
     </div>
     
     <div class="text-introduce">그리너리의 다양한 서비스와 혜택을 누리세요</div>
     
-    <form action="서버" method="POST">
-        <input class="input-idpassword" type="text" id="userName" placeholder="아이디 입력" required><br>
-        <input class="input-idpassword" type="password" id="password" placeholder="비밀번호 입력(영문, 숫자, 특수문자 조합)" required><br>
-        <input class="btn-login" type="button" value="로그인">
+    <form action="메인페이지" method="POST">
+        <input id="inputId" class="input-idpassword" type="text" name="userId" placeholder="아이디 입력" required><br>
+        <div id="inputIdMessage"></div>
+        <input id="inputPassword1" class="input-idpassword" type="password" name="userPassword" placeholder="비밀번호 입력(영문, 숫자, 특수문자 조합)" required><br>
+        <div id="inputPasswordMessage1"></div>
+        <input class="btn-login" type="submit" value="로그인">
     </form>
 
-    <div class="box-signup">
+    <div id="boxSignup" class="box-signup">
         <div>아직 회원이 아니신가요?</div>
-	    <div>
+        <div>
             회원가입
-            <img src="images/arrowIcon.png">
+            <img src="../images/arrowIcon.png">
         </div>
     </div>
-    
+
+    <script src="login.js"></script>
 </body>
 </html>
