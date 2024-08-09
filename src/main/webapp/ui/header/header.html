@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<link rel="stylesheet" href="../css/common.css">
+	<link rel="stylesheet" href="../header/header.css">
+	
+</head>
+<body>
+	<script src="header.js"></script>
+	<header>
+		<!-- 로고 -->
+		<div class="header-logo">
+			<a href="">
+				<span class="logo">greenery</span>
+			</a>
+		</div>
+		<!-- [로그인, 마이페이지, 장바구니] -->
+		<div class="header-nav">
+			<button class="header-login">
+				<img src="../images/login_icon.png" class="header-nav-icon">
+				<span class="header-nav-text">로그인</span>
+			</button>
+			<button class="header-mypage">
+				<img src="../images/mypage_icon.png" class="header-nav-icon">
+				<span class="header-nav-text">마이페이지</span>
+			</button>
+			<button class="header-cart">
+				<img src="../images/cart_icon.png" class="header-nav-icon">
+				<span class="header-cart-badge">0</span>
+				<span class="header-nav-text">장바구니</span>
+			</button>
+		</div>
+	</header>
+	<!-- 카테고리 -->
+	<div class="header-category">
+		<div class="header-category-btn" onclick="categoryOpen(this)">
+			<div class="header-category-bar">
+				<div class="bar"></div>
+				<div class="bar"></div>
+				<div class="bar"></div>
+			</div>
+			<span class="header-category-text">카테고리</span>
+		</div>
+		<div class="header-category-wrap">
+			<ul class="category-wrap">
+				<li>
+					<a href="">
+						<span class="category-span">스킨케어<img src="../images/category_right_arrow.png" width=5 height=10></span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<span class="category-span">메이크업<img src="../images/category_right_arrow.png" width=5 height=10></span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<span class="category-span">바디케어<img src="../images/category_right_arrow.png" width=5 height=10></span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<span class="category-span">헤어케어<img src="../images/category_right_arrow.png" width=5 height=10></span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<span class="category-span">미용소품<img src="../images/category_right_arrow.png" width=5 height=10></span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<span class="category-span">맨즈케어<img src="../images/category_right_arrow.png" width=5 height=10></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="notice">
+			공지사항
+		</div>
+	</div> 
+	<!-- 검색창 -->
+	<div class="header-search">
+		<input type="text" class="header-search-input"> 
+		<button class="header-search-icon"></button>
+	</div>
+</body>
+</html>
