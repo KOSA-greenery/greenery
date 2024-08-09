@@ -22,7 +22,8 @@ body {
     margin: 0 auto;
     border-top: 2px solid lightgray;
     width: 570px;
-    padding: 35px;
+    padding-top: 35px;
+    padding-bottom: 15px;
     color: grey;
 }
 
@@ -37,7 +38,7 @@ body {
     border-radius: 10px;
     font-size: 16px;
     padding-left: 10px;
-    margin-bottom: 20px;
+    margin-top: 20px;
     box-sizing: border-box;
 }
 
@@ -74,7 +75,7 @@ body {
     border: none;
     border-radius: 10px;
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .btn1 {
@@ -92,82 +93,10 @@ body {
     background-color: #CDE9E1;
 }
 
-/* 
-.form-id,
-.form-email,
-.form-address1 {
+#inputIdMessage, #inputPasswordMessage1,
+#inputPasswordMessage2, #inputNameMessage, 
+#inputPhoneMessage {
     width: 100%;
-    height: 55px;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-} */
-
-
-
-/* .form-signup {
-    width: 470px;
-    margin: 0 auto;
+    text-align: left;
+    margin-left: 5px;
 }
-
-.form-signup input {
-    border: 2px solid lightgray;
-    border-radius: 10px;
-    font-size: 16px;
-    padding-left: 10px;
-}
-
-.form-id,
-.form-email,
-.form-address1 {
-    width: 100%;
-    height: 55px;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-}
-
-.form-password input,
-.form-address2 input {
-    width: 100%;
-    height: 55px;
-    margin-bottom: 20px;
-    box-sizing: border-box;
-}
-
-.form-id input {
-    width: 340px;
-    height: 55px;
-}
-
-.form-id button {
-    cursor: pointer;
-    width: 100px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    background-color: #CFF7D3;
-}
-
-.form-email input {
-    width: 215px;
-    height: 55px;
-    box-sizing: border-box;
-}
-
-.form-address1 input {
-    width: 240px;
-    height: 55px;
-    box-sizing: border-box;
-}
-
-.form-address1 button {
-    cursor: pointer;
-    width: 200px;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    background-color: #CFF7D3;
-} */
