@@ -4,14 +4,14 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        <link rel="stylesheet" href="../css/common.css" />
+        <link rel="stylesheet" href="../../common.css" />
         <link rel="stylesheet" href="main.css" />
     </head>
     <body>
         <script src="main.js"></script>
         <div class="modal-container">
             <div class="coupon-modal">
-                <img src="../images/modal.png" class="modal-image" />
+                <img src="../../res/images/modal.png" class="modal-image" />
                 <div class="modal-text">
                     <span class="today-close">오늘 그만 보기</span>
                     <span class="close">닫기</span>
@@ -19,7 +19,10 @@
             </div>
         </div>
         <div class="alert-coupon">
-            <img src="../images/coupon_modal_check.png" class="img-alert-coupon">
+            <img
+                src="../../res/images/coupon_modal_check.png"
+                class="img-alert-coupon"
+            />
             <span>쿠폰 발급이 완료되었습니다!</span>
         </div>
         <!-- 헤더를 삽입할 위치 -->
@@ -28,13 +31,13 @@
         <section class="banner">
             <!-- 배너 이미지 -->
             <div class="banner_slides fade_slide">
-                <img src="../images/banner1.png" alt="slide 1" />
+                <img src="../../res/images/banner1.png" alt="slide 1" />
             </div>
             <div class="banner_slides fade_slide">
-                <img src="../images/banner2.png" alt="slide 2" />
+                <img src="../../res/images/banner2.png" alt="slide 2" />
             </div>
             <div class="banner_slides fade_slide">
-                <img src="../images/banner6.png" alt="slide 3" />
+                <img src="../../res/images/banner6.png" alt="slide 3" />
             </div>
             <!-- 배너 이동 버튼 (왼/오) -->
             <div class="banner-control">
@@ -66,20 +69,37 @@
         <div class="toolbar">
             <!-- 카테고리 -->
             <nav class="toolbar-category">
-                <button class="toolbar-category-btn active-category">전체</button>
-                <button class="toolbar-category-btn">스킨케어</button>
-                <button class="toolbar-category-btn">메이크업</button>
-                <button class="toolbar-category-btn">바디케어</button>
-                <button class="toolbar-category-btn">헤어케어</button>
-                <button class="toolbar-category-btn">미용소품</button>
-                <button class="toolbar-category-btn">맨즈케어</button>
+                <button class="toolbar-category-btn active-category">
+                    전체
+                </button>
+                <button class="toolbar-category-btn" data-category="Skincare">
+                    스킨케어
+                </button>
+                <button class="toolbar-category-btn" data-category="Makeup">
+                    메이크업
+                </button>
+                <button class="toolbar-category-btn" data-category="BodyCare">
+                    바디케어
+                </button>
+                <button class="toolbar-category-btn" data-category="HairCare">
+                    헤어케어
+                </button>
+                <button
+                    class="toolbar-category-btn"
+                    data-category="BeautyTools"
+                >
+                    미용소품
+                </button>
+                <button class="toolbar-category-btn" data-category="MensCare">
+                    맨즈케어
+                </button>
             </nav>
             <!-- 상품 정렬 -->
             <div class="toolbar-sort">
                 <select class="toolbar-sort-select">
-                    <option>신상품순</option>
-                    <option>낮은 가격순</option>
-                    <option>높은 가격순</option>
+                    <option value="default">신상품순</option>
+                    <option value="price-asc">낮은 가격순</option>
+                    <option value="price-desc">높은 가격순</option>
                 </select>
             </div>
             <!-- TO-DO [추후 개선] select -> button (스타일링 다양하게 가능)
@@ -92,10 +112,8 @@
 		</button>
 		-->
         </div>
-        <section class="main-product">
-            <!-- 자바스크립트를 활용해 상품 리스트를 동적으로 추가 -->
-        </section>
         <div class="main-products">
+            <div class="product-container"></div>
             <button class="scroll-btn-up" onclick="scrollToTop()"></button>
         </div>
 
