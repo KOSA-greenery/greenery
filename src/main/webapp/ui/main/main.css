@@ -62,7 +62,7 @@
     color: #ffffff;
     justify-content: center;
     align-items: center;
-    line-height: 1; 
+    line-height: 1;
 }
 
 .img-alert-coupon {
@@ -107,11 +107,13 @@
 }
 
 .banner-control-btn-left {
-    background: url("../images/left_arrow.png") no-repeat center center/40%;
+    background: url("../../res/images/left_arrow.png") no-repeat center
+        center/40%;
 }
 
 .banner-control-btn-right {
-    background: url("../images/right_arrow.png") no-repeat center center/40%;
+    background: url("../../res/images/right_arrow.png") no-repeat center
+        center/40%;
 }
 
 .banner-indicator {
@@ -137,18 +139,18 @@
     background-color: rgb(255, 255, 255, 0.6);
 }
 
-.fade_slide {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade_slide {
+@keyframes fade {
     from {
         opacity: 0.6;
     }
     to {
         opacity: 1;
     }
+}
+
+.fade_slide {
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 
 .toolbar {
@@ -167,8 +169,8 @@
 .toolbar-category-btn {
     flex: 1;
     border: none;
-    background-color: #F5F5F5;
-    color: #9B9F9E;
+    background-color: #f5f5f5;
+    color: #9b9f9e;
     border-radius: 16px;
     cursor: pointer;
     padding: 6px 20px;
@@ -202,8 +204,6 @@
     position: relative;
     margin: 0 auto;
     width: 75%;
-    height: 500px;
-    background-color: grey;
 }
 
 .scroll-btn-up {
@@ -218,7 +218,7 @@
     border-radius: 20px;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
     background-color: #ffffff;
-    background-image: url("../images/up_arrow.png");
+    background-image: url("../../res/images/up_arrow.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 40%;
