@@ -167,9 +167,9 @@ function getData() {
 }
 
 $(document).ready(function () {
-    loadHTML("../Header/header.html", "header");
+    loadHTML("../header/header.html", "header");
     loadScript("../header/header.js");
-    loadHTML("../Footer/footer.html", "footer");
+    loadHTML("../footer/footer.html", "footer");
     autoSlides();
     getData(); // 초기 데이터 로드 (전체)
     scrollToTop();
