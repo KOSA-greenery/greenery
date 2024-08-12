@@ -184,6 +184,10 @@ header {
     background-color: rgb(238, 238, 238);
 }
 
+.category-wrap {
+	padding-left: 0px;
+}
+
 .category-wrap li {
     margin: 15px 0 0 32px;
     font-size: 14px;
