@@ -85,8 +85,7 @@ function showSlides(n) {
 
 //클릭시 상세페이지, 리뷰로 이동
     document.addEventListener("DOMContentLodaded", function() {
-    document.getElementById("detailTab").click();            
-    
+        document.getElementById("detailTab").click();            
     });
 
 function openTab(evt, tabName) {
