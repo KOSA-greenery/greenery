@@ -299,3 +299,7 @@ justify-content: space-between;
     background-position: center center;
     background-size: 40%;
 }
+
+img:hover {
+	cursor: pointer;
+}
