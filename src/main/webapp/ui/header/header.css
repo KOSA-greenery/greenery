@@ -1,4 +1,5 @@
 header {
+	box-sizing: content-box;
     position: relative;
     display: flex;
     justify-content: space-between;
