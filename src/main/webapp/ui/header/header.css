@@ -1,4 +1,4 @@
-header {
+.header {
 	box-sizing: content-box;
     position: relative;
     display: flex;
@@ -61,6 +61,7 @@ header {
 .header-login,
 .header-mypage,
 .header-cart {
+	font-size: 13px;
     display: flex;
     flex-direction: column;
     align-items: center;
