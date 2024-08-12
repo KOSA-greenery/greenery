@@ -12,6 +12,7 @@ body {
 	max-width: 1310px;
 	margin: 0 auto;
 	/* padding: 20px; */
+	margin-top: 50px;
 }
 
 .left {
@@ -28,6 +29,29 @@ body {
 	display : flex;
 	flex-direction: column;
 	justify-content: space-between;
+}
+
+.brand-name {
+	font-size: 24px;
+	font-weight: 800;
+	margin: 0;
+	margin-bottom: 1px;
+	color: #0F5E32;
+}
+
+.product-title {
+	font-size: 37px;
+	margin-top: 5px;
+	font-weight: 800;
+	/* margin: 0; */
+	line-height: 1px;
+}
+
+.description {
+	font-size: 18px; /* 설명 텍스트 크기 */
+	line-height: 1.6;
+	color: #666;
+	margin: 0;
 }
 
 .slideshow-container {
@@ -47,18 +71,20 @@ overflow: hidden;
 white-space: nowrap;
 height: 100px;
 max-width: 560px;
-margin: 0 212px;
+margin: 0 202px;
 align-items: center;
 object-fit: cover;
 gap: 40px;
 justify-content: space-between;
 }
 
-
+.dot {
+	margin-left: 26px;
+}
 
 .tab {
 	display: flex;
-	padding: 50px;
+	padding: 70px;
 	justify-content: center;	
 	align-items: center;
 }
@@ -85,11 +111,11 @@ justify-content: space-between;
 }
 
 /* 버튼의 활성화 상태에 대한 스타일 */
-.tablinks.active {
+.tablinksactive {
    color: black; /* 활성화된 탭의 텍스트 색상 */
-   background-color: transparent; /* 배경 색상 제거 */
-   border: none; /* 테두리 제거 */
-   font-weight: 500; /* 폰트 굵기 유지 */
+   font-weight: 500;
+   /* background-color: transparent; 배경 색상 제거
+   border: none; */ /* 테두리 제거 */
 }
 
 /* 버튼 클릭 시 기본 스타일이 유지되는 문제 해결 */
@@ -100,7 +126,7 @@ justify-content: space-between;
 }
 
 /* 활성화된 탭의 구분선 스타일 */
-.tablinks.active:after {
+.tablinksactive:after {
    content: "";
    height: 2px; /* 활성화된 탭의 구분선 두께 */
    background-color: black; /* 활성화된 탭의 구분선 색상 */
@@ -110,57 +136,33 @@ justify-content: space-between;
 }
 
 /* 탭 1의 활성화된 상태에 대한 스타일 */
-.tab1 .tablinks.active {
+.tab1 .tablinksactive {
    color: black; /* 활성화된 탭의 텍스트 색상 */
 }
 
-.tab1 .divider1 {
-   width: 463px;
-   height: 2px; /* 활성화된 탭의 구분선 두께 */
-   background-color: black; /* 활성화된 탭의 구분선 색상 */
+.tab1 #dividerDetail, .tab2 #dividerReview {
+   width: 640px;
+   height: 0.2px; /* 활성화된 탭의 구분선 두께 */
+   background-color: #a9a9a9; /* 활성화된 탭의 구분선 색상 */
    margin-top: 20px;
    transition: height 0.3s ease, background-color 0.3s ease;
 }
 
-/* 탭 2의 기본 및 활성화된 상태에 대한 스타일 */
-.tab2 .tablinks {
-   color: #a9a9a9; /* 기본 텍스트 색상 */
+.tab1 .tablinksactive ~ #dividerDetail {
+	height: 2px;
+	background-color: black;
 }
 
-.tab2 .tablinks.active {
-   color: black; /* 활성화된 탭의 텍스트 색상 */
-}
-
-.tab2 .divider2 {
-   width: 463px;
-   height: 0.2px; /* 기본 구분선 두께 */
-   background-color: #a9a9a9; /* 기본 구분선 색상 */
-   margin-top: 20px;
-   transition: height 0.3s ease, background-color 0.3s ease;
+.tab2 .tablinksactive ~ #dividerReview {
+    height: 2px; /* 활성화된 탭의 구분선 두께 */
+    background-color: black; /* 활성화된 탭의 구분선 색상 */
 }
 
 
-
-
-
-
-.brand-name {
-	font-size: 24px;
-	margin: 0;
-	color: #0F5E32;
+.tabcontent {
+	display: none;
 }
 
-.product-title {
-	font-size: 32px;
-	margin-top: 5px;
-	/* margin: 0; */
-}
-
-.description {
-	font-size: 14px; /* 설명 텍스트 크기 */
-	line-height: 1.5;
-	color: #666;
-}
 
 .product-quantity {
 	display: flex;
@@ -255,13 +257,13 @@ justify-content: space-between;
 }
 
 .wishlist-button.active .wishlist {
-    content: url('../images/fullheart-icon.png');
+    content: url('../../res/images/fullheart-icon.png');
 }
 
 
 .divider {
 	border-top: 1px solid #ddd;
-	margin: 5px 0;
+	/* margin: 2px 0; */
 }
 
 .product-info {
@@ -278,4 +280,22 @@ justify-content: space-between;
 
 #Detail {
   text-align: center;
+}
+
+.scroll-btn-up {
+    z-index: 98;
+    position: fixed;
+    right: 2%;
+    bottom: 10%;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #eeeeee;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+    background-color: #ffffff;
+    background-image: url("../../res/images/up_arrow.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40%;
 }

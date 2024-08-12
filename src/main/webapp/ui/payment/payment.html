@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>결제 페이지</title>
 
-<link rel="stylesheet" href="../css/payment.css">
+<link rel="stylesheet" href="payment.css">
 </head>
 
 <body>
@@ -64,7 +64,7 @@
 					
 					
 					<div class="basket-delete">
-						<a href="#" class="abutton"> <img src="../images/X-icon.png"
+						<a href="#" class="abutton"> <img src="../../res/images/X-icon.png"
 							alt="삭제 버튼" class="delete-icon"
 							style="width: 30px; height: 30px;">
 						</a>
@@ -103,7 +103,7 @@
 						<strong>40,000원</strong>
 						</div>
 					<div class="basket-delete">
-						<a href="#" class="abutton"> <img src="../images/X-icon.png"
+						<a href="#" class="abutton"> <img src="../../res/images/X-icon.png"
 							alt="삭제 버튼" class="delete-icon"
 							style="width: 30px; height: 30px;">
 						</a>
@@ -142,7 +142,7 @@
 					<strong>40,000원</strong>
 					</div>
 					<div class="basket-delete">
-						<a href="#" class="abutton"> <img src="../images/X-icon.png"
+						<a href="#" class="abutton"> <img src="../../res/images/X-icon.png"
 							alt="삭제 버튼" class="delete-icon"
 							style="width: 30px; height: 30px;">
 						</a>
@@ -164,7 +164,7 @@
 					<div class="custom-select">
 						<select>
 							<option value="1">그리너리 회원을 위한 1,000원 할인 쿠폰</option>
-						</select> <img src="../images/dropdown-icon.png" alt="dropdown-icon"
+						</select> <img src="../../res/images/dropdown-icon.png" alt="dropdown-icon"
 							class="dropdown-icon">
 					</div>
 					<button class="apply-coupon">쿠폰 적용</button>
@@ -200,8 +200,7 @@
 						<!-- 주문버튼 -->
 						<div class="clear"></div>
 						<div id="product-order">
-							<button id="order-button">
-								<a href="결제하기 페이지url">선택 상품 주문</a>
+							<button id="order-button">선택 상품 주문
 							</button>
 						</div>
 					</div>
@@ -223,8 +222,8 @@
                 .catch(error => console.error(error));
         }
         document.addEventListener('DOMContentLoaded', () => {
-            loadHTML('header.html', 'header');
-            loadHTML('footer.html', 'footer');
+            loadHTML('../header/header.html', 'header');
+            loadHTML('../footer/footer.html', 'footer');
         });
         
         /* 체크 박스 부분 */
@@ -323,6 +322,10 @@
             console.log(`저장된 상품: ${productName}, 수량: ${quantity}, 가격: ${price}`);
         }
         
+        
+        document.getElementById('order-button').addEventListener('click', function() {
+            window.location.href = '../order/order.html';
+        });
         
 
        

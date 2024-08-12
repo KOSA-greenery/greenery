@@ -52,7 +52,7 @@ input[type="checkbox"]:checked::after {
     display: block;
     width: 13px; /* 이미지 크기 */
     height: 13px; /* 이미지 크기 */
-    background-image: url('../images/check-icon.png'); /* 체크 표시 이미지 경로 */
+    background-image: url('../../res/images/check-icon.png'); /* 체크 표시 이미지 경로 */
     background-size: contain; /* 이미지 크기 조정 */
     background-repeat: no-repeat; /* 이미지 반복 방지 */
     margin-top: 3px;
