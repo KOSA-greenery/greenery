@@ -44,7 +44,7 @@ header {
 }
 
 .header-search-icon {
-    background: url("../images/search_icon.png") no-repeat center center;
+    background: url("../../res/images/search_icon.png") no-repeat center center;
     background-size: contain;
     border: none;
     width: 20px;
