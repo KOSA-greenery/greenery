@@ -220,6 +220,11 @@ header {
 @media (max-width: 768px) {
     .header-search {
         margin-top: 125px;
-        left: 75%;
+        left: 50%;
+    }
+
+    .header-search-icon {
+        background-color: #ffffff;
+        right: 0px;
     }
 }
