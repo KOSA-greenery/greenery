@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="../../res/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<script src="../../res/bootstrap/bootstrap.bundle.min.js"></script>
+	<script src="../../res/bootstrap/jquery.min.js"></script>
+    <link href="addproduct.css" rel="stylesheet" type="text/css"/>
+</head>
+
+
+
+<body>
+    <div class="section1">
+        <h2 class="text-success">greenery</h2>
+    </div>
+    
+    <div class="section2">
+        <div class="section3">
+            <div class="text-white" id="product">상품 관리</div>
+            <div class="collapse show" id="home-collapse1">
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white text-decoration-none rounded">상품 등록 / 수정</a></li>
+                    <li><a href="#" class="text-white text-decoration-none rounded">상품 조회</a></li>
+                </ul>
+            </div>
+            <div class="text-white" id="notice">공지사항 관리</div>
+            <div class="collapse show" id="home-collapse2">
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white text-decoration-none rounded">상품 등록 / 수정</a></li>
+                    <li><a href="#" class="text-white text-decoration-none rounded">상품 조회</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section4">
+            <h6 class="section4-text">상품관리 > <span class="text-success"><b>상품등록 / 수정</b></span></h6>
+            <h2 class="section4-text"><b>상품등록 / 수정</b></h2>
+            <h5 class="section4-text"><b>기본 정보</b></h5>
+            <form>
+                <div class="form-group">
+                    <label>상품명<span class="text-essential">(필수)</span></label>
+                    <input type="text" placeholder="예시) 프레시 블랙 떡솝" maxlength="250">
+                </div>
+                <div class="form-group">
+                    <label>판매가<span class="text-essential">(필수)</span></label>
+                    <input type="text" placeholder="원">
+                </div>
+                <div class="form-group">
+                    <label>상품 수량<span class="text-essential">(필수)</span></label>
+                    <input type="text" placeholder="개">
+                </div>
+                <div class="form-group">
+                    <label>상품 이미지 (썸네일)</label>
+                    <input type="file">
+                </div>
+                <div class="form-group">
+                    <label>상품 대표 설명 (썸네일)</label>
+                    <input type="text" placeholder="상품의 대표 설명을 입력하세요">
+                </div>
+                <div class="form-group">
+                    <label>상품 요약 설명</label>
+                    <input type="text" placeholder="상품의 핵심 특징을 간단히 설명하세요">
+                </div>
+                <div class="form-group">
+                    <label>상품 상세 설명</label>
+                    <textarea rows="5" placeholder="상품에 대한 상세한 설명을 입력하세요"></textarea>
+                </div>
+                <div class="btn-register-div">
+                    <button type="submit" class="btn-register">등록</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    
+
+    <script src="addproduct.js"></script>
+</body>
+</html>
