@@ -46,7 +46,6 @@
     }
 
     .text-white {
-        background-color: none; /* 클릭 시 배경색을 투명하게 설정 */
         cursor: pointer;
     }
 
@@ -77,18 +76,6 @@
 
     .form-group input[type="file"] {
         padding: 3px;
-    }
-
-    .collapsed {
-        background-color: #e9ecef;
-    }
-
-    .collapse {
-        display: none;
-    }
-
-    .collapse.show {
-        display: block;
     }
 
     .text-essential {
@@ -177,65 +164,3 @@
         font-size: 12px;
         margin-top: 2px;
     }
-
-    /* .section4 h1 {
-        font-size: 18px;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
-
-    .btn {
-        display: inline-flex;
-        align-items: center;
-        padding: 10px 15px;
-        cursor: pointer;
-        background-color: #f8f9fa;
-        border: none;
-        border-radius: 5px;
-    }
-
-
-
-    .list-unstyled {
-        list-style-type: none;
-        padding-left: 0;
-        margin-bottom: 0;
-    }
-
-    .fw-normal {
-        font-weight: normal;
-    }
-
-    .small {
-        font-size: 0.875rem;
-    }
-
-    .pb-1 {
-        padding-bottom: 0.25rem;
-    }
-
-    
-
-    .text-decoration-none {
-        text-decoration: none;
-    }
-
-    .d-inline-flex {
-        display: inline-flex;
-    }
-
-    .rounded {
-        border-radius: 5px;
-    }
-
-    .collapse {
-        display: none;
-    }
-
-    .collapse.show {
-        display: block;
-    }
-
-  */
-
