@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <title>화장품 주문완료 페이지</title>
 
 <link rel="stylesheet" href="order.css">
@@ -27,7 +28,14 @@
    <!-- 푸터를 삽입할 위치 -->
 
    <script>
-       function loadHTML(file, elementId) {
+        function loadScript(url) {
+            const script = document.createElement("script");
+            script.src = url;
+            script.type = "text/javascript";
+            document.head.appendChild(script);
+        }
+        
+        function loadHTML(file, elementId) {
             fetch(file)
                 .then(response => response.text())
                 .then(data => {
@@ -35,8 +43,10 @@
                 })
                 .catch(error => console.error(error));
         }
+
         document.addEventListener('DOMContentLoaded', () => {
             loadHTML('../header/header.html', 'header');
+            loadScript("../header/header.js");
             loadHTML('../footer/footer.html', 'footer');
         });
         </script>
