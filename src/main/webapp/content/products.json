@@ -58,13 +58,13 @@
     },
     {
       "productId": 5,
-      "productName": "미니 메이크업 브러시 세트",
+      "productName": "메이크업 브러시 세트",
       "price": 15000,
       "stock": 200,
       "imageUrls": [
         "../../res/images/productImages/5.png"
       ],
-      "mainDescription": "여행용으로 최적화된 메이크업 브러시",
+      "mainDescription": "여행용 메이크업 브러시",
       "summaryDescription": "다양한 메이크업을 위한 미니 브러시 세트",
       "detailedDescription": "이 세트는 모든 메이크업을 위한 필수 도구를 포함하고 있습니다.",
       "registrationDate": "2024-01-20",
