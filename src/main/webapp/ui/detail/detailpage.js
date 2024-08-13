@@ -1,3 +1,9 @@
+function loadScript(url) {
+    const script = document.createElement("script");
+    script.src = url;
+    script.type = "text/javascript";
+    document.head.appendChild(script);
+}
 
 function loadHTML(file, elementId) {
     fetch(file)
@@ -9,6 +15,7 @@ function loadHTML(file, elementId) {
 }
 document.addEventListener('DOMContentLoaded', () => {
     loadHTML('../header/header.html', 'header');
+    loadScript("../header/header.js");
     loadHTML('../footer/footer.html', 'footer');
 });
 
