@@ -29,6 +29,10 @@ function inputPasswordCheck() {
     }
 }
 
+document.querySelector('#IconClose').addEventListener('click', function() {
+    window.location.href = '../main/main.html'; // 이동할 URL을 입력하세요
+});
+
 document.querySelector('#boxSignup').addEventListener('click', function() {
     window.location.href = '../signup/signup.html'; // 이동할 URL을 입력하세요
 });
