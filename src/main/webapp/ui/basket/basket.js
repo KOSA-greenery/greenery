@@ -6,6 +6,7 @@ $(document).ready(function () {
     $("#footer").load("../footer/footer.html", function () {
         console.log("Footer loaded successfully.");
     });
+    $.getScript("../header/header.js");
 });
 
 
