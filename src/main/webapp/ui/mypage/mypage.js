@@ -1,19 +1,3 @@
-function loadScript(url) {
-    const script = document.createElement("script");
-    script.src = url;
-    script.type = "text/javascript";
-    document.head.appendChild(script);
-}
-
-function loadHTML(file, elementId) {
-    fetch(file)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById(elementId).innerHTML = data;
-        })
-        .catch(error => console.error(error));
-}
-
 function getContent(url) {
     $.ajax({
         url: url + ".html",
@@ -83,9 +67,9 @@ function getData() {
 
 
 $(document).ready(function () {
-    loadHTML("../header/header.html", "header");
-    loadScript("../header/header.js");
-    loadHTML("../footer/footer.html", "footer");
+    $("#header").load("../header/header.html");
+    $("#footer").load("../footer/footer.html");
+    $.getScript("../header/header.js");
 	getContent("likedProducts");
 	$(".mypage-menu").click(function() {
 		$(".mypage-content").empty();
