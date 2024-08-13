@@ -30,6 +30,12 @@
 	font-size: 20px;
 }
 
+.mypage-content {
+	width: 75%;
+}
+
+/* 찜한 상품 */
+
 .mypage-title {
 	align-items: center;
 	display: flex;
@@ -50,8 +56,8 @@
 	height: 34px;
 }
 
-.mypage-content {
-	width: 75%;
+.coupon-status {
+	font-size: 14px;
 }
 
 .coupon-num {
@@ -90,18 +96,18 @@
 
 .product-icons {
     position: absolute;
-    bottom: -100px; /* 아이콘들이 기본적으로 숨겨져 있는 위치 */
+    bottom: -100px; 
     left: 0;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    transition: bottom 0.3s ease-in-out; /* 슬라이드 애니메이션 */
+    transition: bottom 0.3s ease-in-out; 
     background-color: rgba(0, 0, 0, 0.6);
     padding: 7px 0;
 }
 
 .product-image-container:hover .product-icons {
-    bottom: 0; /* 마우스 오버 시 아이콘들이 올라오는 위치(0이면 맨 밑에서 올라옴) */
+    bottom: 0; 
 }
 
 .icon {
@@ -112,12 +118,12 @@
     height: 50px;
     background-color: transparent;
     margin: 0 15px;
-    border-radius: 50%; /* 원형 배경 */
+    border-radius: 50%
 }
 
 .icon img {
-    width: 27px; /* 아이콘 이미지의 너비 */
-    height: 27px; /* 아이콘 이미지의 높이 */
+    width: 27px; 
+    height: 27px; 
     cursor: pointer;
 }
 
@@ -146,6 +152,8 @@
     font-weight: bold;
 }
 
+/* 주문 내역 */
+
 .order-list {
 	margin-top: 20px;
 	font-size: 14px;
@@ -154,7 +162,7 @@
 .order-list-col {
 	display: flex;
 	justify-content: space-between;
-	height: 50px;
+	height: 70px;
 	text-align: center;
 	border-top: 2px solid #AFAFAF;
 	background-color: #f2f2f2;
@@ -162,7 +170,7 @@
 
 .order-list-col div {
 	display: flex;
-	border-right: 1px solid #EEEEEE; 
+	border-right: 1px solid #DCDCDC; 
 	justify-content: center;
 	align-items: center;
 	height: 100%;
@@ -178,19 +186,93 @@
 
 .ol-3 {
 	flex: 3;
+	display: flex;
 }
 
-.item-list-col {
+.ol-3 img {
+	width: 70px;
+	height: 70px;
+	object-fit: cover;
+}
+
+.order-item-col {
 	display: flex;
 	justify-content: space-between;
-	height: 100px;
+	height: 200px;
 	text-align: center;
 	border-bottom: 1px solid #AFAFAF; 
 }
 
-.item-list-col div {
+.order-item-img {
+	width: 40%;
+}
+
+.order-item-info {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 50%;
+}
+
+.order-item-col > div {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100%;
+	word-break: break-all;
+}
+
+.item-desc {
+	color: #B1B1B1;
+}
+
+/* 개인정보 수정 */
+
+.mypage-myinfo-title {
+	font-size: 20px;
+	font-weight: 600;
+	border-bottom: 1px solid #EEEEEE;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+}
+
+.myinfo-list {
+	font-size: 14px;
+	width: 60%;
+}
+.myinfo-list div {
+	display: flex;
+	align-items: center;
+	height: 50px;
+	border-bottom: 1px solid #AEAEAE;
+}
+
+.myinfo-list div:last-child {
+	border: none;
+	margin-top: 50px;
+}
+
+.myinfo-list div span {
+	width: 50%;
+	box-sizing: border-box;
+}
+
+.myinfo-list div span:first-child {
+	font-weight: 600;
+}
+
+.myinfo-list div span:last-child {
+	color: #7E7E7E;
+}
+
+.myinfo-edit {
+	justify-content: center;
+}
+
+.myinfo-edit-btn {
+	width: 40%;
+	background-color: #CFF7D3;
+	border: none;
+	border-radius: 5px;
+	height: 50px;
 }
