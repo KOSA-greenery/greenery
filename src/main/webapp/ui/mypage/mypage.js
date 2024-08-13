@@ -21,14 +21,14 @@ function getContent(url) {
         dataType: "html",
         success: function (data) {
 			$(".mypage-content").append(data);
+			if (url === "likedProducts") {
+				getData();
+			}
         },
         error: function (err) {
             console.error("Error fetching product data:", err);
         },
     });
-	if (url === "likedProducts") {
-		getData();
-	}
 }
 
 function dataToHtml(products) {
@@ -86,6 +86,7 @@ $(document).ready(function () {
     loadHTML("../header/header.html", "header");
     loadScript("../header/header.js");
     loadHTML("../footer/footer.html", "footer");
+	getContent("likedProducts");
 	$(".mypage-menu").click(function() {
 		$(".mypage-content").empty();
 		getContent($(this).data("url"));
