@@ -70,6 +70,8 @@ body {
 }
 
 .btn {
+    background-color: #000000;
+    color: white;
     height: 55px;
     cursor: pointer;
     border: none;
@@ -80,17 +82,14 @@ body {
 
 .btn1 {
     width: 100px;
-    background-color: #CFF7D3;
 }
 
 .btn2 {
     width: 200px;
-    background-color: #CFF7D3;
 }
 
 .btn3 {
     width: 470px;
-    background-color: #CDE9E1;
 }
 
 #inputIdMessage, #inputPasswordMessage1,
