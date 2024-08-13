@@ -47,11 +47,12 @@ header {
 .header-search-icon {
     background: url("../../res/images/search_icon.png") no-repeat center center;
     background-size: contain;
+    background-color: #ffffff;
     border: none;
     width: 20px;
     height: 20px;
     position: absolute;
-    right: 10px;
+    right: 0;
 }
 
 .header-nav {
@@ -227,10 +228,5 @@ header {
     .header-search {
         margin-top: 125px;
         left: 50%;
-    }
-
-    .header-search-icon {
-        background-color: #ffffff;
-        right: 0px;
     }
 }
