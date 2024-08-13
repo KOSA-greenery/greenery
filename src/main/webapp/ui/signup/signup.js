@@ -139,4 +139,8 @@ btnZipcode.addEventListener('click', () => {
     }
 );
 
+document.querySelector('#iconClose').addEventListener('click', function() {
+    window.location.href = '../main/main.html';
+})
+
 
