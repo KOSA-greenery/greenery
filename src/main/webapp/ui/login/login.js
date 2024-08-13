@@ -30,5 +30,6 @@ function inputPasswordCheck() {
 }
 
 document.querySelector('#boxSignup').addEventListener('click', function() {
-    window.location.href = 'https://www.naver.com/'; // 이동할 URL을 입력하세요
+    window.location.href = '../signup/signup.html'; // 이동할 URL을 입력하세요
 });
+
