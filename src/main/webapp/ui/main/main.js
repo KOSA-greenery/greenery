@@ -177,4 +177,14 @@ $(document).ready(function () {
             $(".toolbar-category .active-category").data("category")
         );
     });
+    // 동적으로 생성된 like 아이콘에 대한 이벤트 처리
+    $(document).on('click', '.icon.like-icon', function() {
+        $(this).toggleClass("active");
+        let heartIcon = $(this).find("img");
+        if ($(this).hasClass("active")) {
+            heartIcon.attr("src", "../../res/images/fill_heart.png");
+        } else {
+            heartIcon.attr("src", "../../res/images/heart.png")
+        }
+    });
 });

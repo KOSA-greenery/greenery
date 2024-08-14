@@ -25,8 +25,8 @@ function dataToHtml(products) {
                 product.productName
             }" class="product-image">
                     <div class="product-icons">
-                        <span class="icon like-icon">
-                            <img src="../../res/images/heart.png" alt="찜하기 아이콘">
+                        <span class="icon like-icon active">
+                            <img src="../../res/images/fill_heart.png" alt="찜하기 아이콘">
                         </span>
                         <span class="icon cart-icon">
                             <img src="../../res/images/cart_icon2.png" alt="장바구니 아이콘">
@@ -75,5 +75,15 @@ $(document).ready(function () {
 		$(".mypage-content").empty();
 		getContent($(this).data("url"));
 	})
+    // 동적으로 생성된 like 아이콘에 대한 이벤트 처리
+    $(document).on('click', '.icon.like-icon', function() {
+        $(this).toggleClass("active");
+        let heartIcon = $(this).find("img");
+        if ($(this).hasClass("active")) {
+            heartIcon.attr("src", "../../res/images/fill_heart.png");
+        } else {
+            heartIcon.attr("src", "../../res/images/heart.png")
+        }
+    });
 });
 
