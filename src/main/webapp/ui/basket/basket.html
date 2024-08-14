@@ -24,14 +24,14 @@
                         for="allchk">전체선택</label>
                 </div>
                 <div class="button-group">
-                    <button type="button" onclick="deleteSelected()">선택 삭제</button>
+                    <button class="btn" onclick="deleteSelected()">선택 삭제</button>
                 </div>
             </div>
 
             <hr id="hr-topLine">
 
             <div id="productList"></div> <!-- 동적으로 상품을 추가할 위치 -->
-
+            <button class="scroll-btn-up" onclick="scrollToTop()"></button>
 
         </div>
 
@@ -58,7 +58,7 @@
                     <div id="goOrder" class=""> <!-- 주문버튼 -->
                         <div class="clear"></div>
                         <div id="product-order">
-                            <button id="order-button">선택 상품 주문</button>
+                            <button id="order-button" class="btn">선택 상품 주문</button>
                         </div>
                     </div>
                 </div>
