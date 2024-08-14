@@ -1,12 +1,21 @@
-// 헤더, 푸터
+// 헤더, 푸터 파일 로드
 $(document).ready(function () {
-    $("#header").load("../header/header.html", function () {
-        console.log("Header loaded successfully.");
-    });
-    $("#footer").load("../footer/footer.html", function () {
-        console.log("Footer loaded successfully.");
+	$("#header").load("../header/header.html");
+	$("#footer").load("../footer/footer.html");
+
+    $.getJSON("../../content/products.json", function (data) {
+        dataToHtml(data.products);
+    }).fail(function () {
+        console.error("JSON 파일을 불러오는 데 실패함");
     });
 });
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+    });
+}
 
 
 // 데이터 
@@ -24,11 +33,13 @@ $.ajax({
 
                         <div class="product-body">
                             <input type="checkbox" class="product-checkbox">
-                            <div class="img"><img src="${product.imageUrls[0]}" alt="${product.productName}"></div>
+                            <div class="img"><img src="${product.imageUrls[0]}" alt="${product.productName}" class="picture"></div>
+                            
                             <div class="product-label">
                                 <div class="product-name"><span><strong>${product.productName}</strong></span></div>
                                 <div class="product-description"><span>${product.summaryDescription}</span></div>
                             </div>
+                            
                             <div class="product-quantity">
                                 <button onclick="decreaseQuantity()">-</button>
                                 <span class="quantity-number" id="quantity-${product.productId}">1</span>
@@ -55,4 +66,9 @@ $.ajax({
     error: function (err) {
         console.error('Error fetching product data:', err);
     }
+});
+$(document).ready(function(){
+   $('#order-button').on('click',function(){
+    window.location.href = '../payment/payment.html';
+    }); 
 });
