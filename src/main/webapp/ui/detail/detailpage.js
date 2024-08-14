@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     $("#header").load("../header/header.html");
     $("#footer").load("../footer/footer.html");
-    $.getScript("../header/header.js");
 });
 
 // 찜 추가

@@ -153,7 +153,6 @@ function getData() {
 $(document).ready(function () {
     $("#header").load("../header/header.html");
     $("#footer").load("../footer/footer.html");
-    $.getScript("../header/header.js");
     autoSlides();
     getData(); // 초기 데이터 로드 (전체)
     scrollToTop();

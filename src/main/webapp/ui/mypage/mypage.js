@@ -69,7 +69,6 @@ function getData() {
 $(document).ready(function () {
     $("#header").load("../header/header.html");
     $("#footer").load("../footer/footer.html");
-    $.getScript("../header/header.js");
 	getContent("likedProducts");
 	$(".mypage-menu").click(function() {
 		$(".mypage-content").empty();
