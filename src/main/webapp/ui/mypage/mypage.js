@@ -7,7 +7,9 @@ function getContent(url) {
 			$(".mypage-content").append(data);
 			if (url === "likedProducts") {
 				getData();
-			}
+			} else if (url === "orderList") {
+                getReview();
+            }
         },
         error: function (err) {
             console.error("Error fetching product data:", err);
@@ -65,6 +67,19 @@ function getData() {
     });
 }
 
+function getReview() {
+    $.ajax({
+        url: "../reviews/reviews.html",
+        method: "GET",
+        dataType: "html",
+        success: function (data) {
+			$(".order-status").append(data);
+        },
+        error: function (err) {
+            console.error("Error fetching product data:", err);
+        },
+    })
+}
 
 $(document).ready(function () {
     $("#header").load("../header/header.html");
