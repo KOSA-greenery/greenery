@@ -35,14 +35,13 @@ $.ajax({
           })
 
 
-$(document).ready(function () {
-    loadHTML("../header/header.html", "header");
-    loadScript("../header/header.js");
-    loadHTML("../footer/footer.html", "footer");
-	getContent("likedProducts");
-	$(".mypage-menu").click(function() {
-		$(".mypage-content").empty();
-		getContent($(this).data("url"));
-	})
-});
+		  $(document).ready(function () {
+		  	$("#header").load("../header/header.html");
+		  	$("#footer").load("../footer/footer.html");
 
+		      $.getJSON("../../content/products.json", function (data) {
+		          dataToHtml(data.products);
+		      }).fail(function () {
+		          console.error("JSON 파일을 불러오는 데 실패함");
+		      });
+		  });

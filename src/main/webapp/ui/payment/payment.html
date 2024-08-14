@@ -3,22 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <title>결제 페이지</title>
-
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+ <link rel="stylesheet" href="../../common.css" />
 <link rel="stylesheet" href="payment.css">
 </head>
 
 <body>
+<script src="payment.js"></script>
 	<div id="header"></div>
 	<!-- 공통 헤더(상단바) 삽입 -->
 
+<h1>결제하기</h1>
 	<div class="basket" id="basket">
 		<div class="product-list">
-			<h1 class="payment-title">결제하기</h1>
+			<!-- <h1 class="payment-title">결제하기</h1> -->
 			<div class="basket-list-header">
 				<div class="checkbox-container">
-					<input type="checkbox" id="allchk" checked="checked"> <label
+					<input type="checkbox" id="allchk" onclick="checked()"> <label
 						for="allchk">전체선택</label>
 				</div>
 				<div class="button-group">
@@ -28,16 +30,16 @@
 
 			<hr id="hr-topLine">
 
-			<div id="productList"></div>
-			<!-- 동적으로 상품을 추가할 위치 -->
+			<div id="productList"></div> <!-- 동적으로 상품을 추가할 위치 -->
+            <button class="scroll-btn-up" onclick="scrollToTop()"></button>
 
 			<!-- 장바구니에 담은 상품 리스트 -->
-			<div class="product">								
+<!-- 			<div class="product">								
 				<div class="product-body">
 					<p>
 						<input type="checkbox" class="product-checkbox">
 					</p>
-					<div class="img">
+					<div class="product-img">
 						<img
 							src="https://i.pinimg.com/564x/f8/ff/96/f8ff966cde5a7d5f8ca168d24b817051.jpg"
 							alt="상품 이름 1">
@@ -79,7 +81,7 @@
 					<p>
 						<input type="checkbox" class="product-checkbox">
 					</p>
-					<div class="img">
+					<div class="product-img">
 						<img
 							src="https://i.pinimg.com/564x/f8/ff/96/f8ff966cde5a7d5f8ca168d24b817051.jpg"
 							alt="상품 이름 1">
@@ -118,7 +120,7 @@
 					<p>
 						<input type="checkbox" class="product-checkbox">
 					</p>
-					<div class="img">
+					<div class="product-img">
 						<img
 							src="https://i.pinimg.com/564x/f8/ff/96/f8ff966cde5a7d5f8ca168d24b817051.jpg"
 							alt="상품 이름 1">
@@ -151,14 +153,14 @@
 					<hr class="divider">
 				</div>
 			</div>
-			
+ -->			
 			
 			<div class="coupon-info">
 				<!--  쿠폰 할인 정보 -->
-				<h1>
-					쿠폰할인정보
+				<div class="coupon-title">
+				<h1>쿠폰할인정보</h1>
 					<button id="have-coupon">보유쿠폰()</button>
-				</h1>
+					</div>
 				<hr id="hr-topLine">
 				<div class="coupon-input-container">
 					<span class="coupon-label">쿠폰</span>
@@ -209,145 +211,13 @@
 			</div>
 		</div>
 	</div>
+	
+	
+	
 	<div id="footer"></div> <!-- 푸터를 삽입할 위치 -->
 
    <!--  <script src="script.js"></script> JavaScript 파일 링크 -->
 
-	    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-			$("#header").load("../header/header.html");
-            $("#footer").load("../footer/footer.html");
-        });
-        
-        /* 체크 박스 부분 */
-        var allchk = document.getElementById("allchk");
-        var productList = document.querySelectorAll(".check");
-
-        allchk.onclick = () => {
-        	productList.forEach(item => {
-                item.checked = allchk.checked;
-            });
-        };
-
-        function deleteSelected() {
-        	productList.forEach(item => {
-                if (item.checked) {
-                    item.parentElement.remove(); // 체크된 제품 삭제
-                }
-            });
-        }
-        
-       
-        
-        /* 수량 조절 */
-        function increase(button) {
-        	console.log("버튼 눌림");
-            const productDiv = button.closest('.product-info'); // 부모 요소 찾기
-            if (!productDiv) return; // productDiv가 null인 경우 함수 종료
-
-            const quantitySpan = productDiv.querySelector('.quantity-number');
-            
-            const priceSpan = document.querySelector('.product-price'); // 외부 가격 요소 찾기
-			console.log(quantitySpan);
-			console.log(priceSpan);
-            if (!quantitySpan || !priceSpan) return; // 요소가 없으면 함수 종료
-
-            let quantity = parseInt(quantitySpan.innerText);
-            quantity += 1;
-            quantitySpan.innerText = quantity;
-
-            /* 가격 업데이트 */ 
-            const pricePerUnit = parseFloat(priceSpan.getAttribute('data-price'));
-            const totalPrice = (pricePerUnit * quantity).toLocaleString() + '원';
-            priceSpan.innerText = totalPrice; // 가격 업데이트
-
-            // 해당 정보 로컬 스토리지에 저장
-            saveToLocalStorage(productDiv);
-            console.log("수량 증가");
-        }
-        
-        function decrease(button) {
-            const productDiv = button.closest('.product-info'); // 부모 요소 찾기
-            if (!productDiv) return; // productDiv가 null인 경우 함수 종료
-
-            const quantitySpan = productDiv.querySelector('.quantity-number');
-            const priceSpan = document.querySelector('.product-price'); // 외부 가격 요소 찾기
-
-            if (!quantitySpan || !priceSpan) return; // 요소가 없으면 함수 종료
-
-            let quantity = parseInt(quantitySpan.innerText);
-            quantity -= 1;
-            if (quantity < 1) {
-                quantity = 1;
-            }
-            quantitySpan.innerText = quantity;
-
-            /* 가격 업데이트 */ 
-            const pricePerUnit = parseFloat(priceSpan.getAttribute('data-price'));
-            const totalPrice = (pricePerUnit * quantity).toLocaleString() + '원';
-            priceSpan.innerText = totalPrice; // 가격 업데이트
-
-            // 해당 정보 로컬 스토리지에 저장
-            saveToLocalStorage(productDiv);
-        }
-
-        // 로컬 스토리지에 저장하는 함수
-        function saveToLocalStorage(productDiv) {
-            const quantitySpan = productDiv.querySelector('.quantity-number');
-            const priceSpan = productDiv.querySelector('.product-price');
-            const productNameSpan = document.querySelector('.product-title');
-
-            if (!quantitySpan || !priceSpan || !productNameSpan) return; // 요소가 없으면 함수 종료
-
-            const productName = productNameSpan.innerText.trim(); // 상품명
-            const quantity = parseInt(quantitySpan.innerText); // 수량
-            const price = priceSpan.getAttribute('data-price'); // 가격 (숫자형)
-
-            const productInfo = {
-                name: productName,
-                quantity: quantity,
-                price: price
-            };
-
-            // 로컬 스토리지에 저장
-            localStorage.setItem(productName, JSON.stringify(productInfo));
-
-            console.log(`저장된 상품: ${productName}, 수량: ${quantity}, 가격: ${price}`);
-        }
-        
-        
-        document.getElementById('order-button').addEventListener('click', function() {
-            window.location.href = '../order/order.html';
-        });
-        
-
-       
-        
-        /* 쿠폰 적용 */
-        /* document.getElementById('apply-coupon').addEventListener('click', function() {
-            const couponCode = document.getElementById('coupon-code').value;
-            let discount = 0;
-
-            // 예시: 쿠폰 코드에 따라 할인 금액 설정
-            if (couponCode === 'DISCOUNT10') {
-                discount = 5000; // 5,000원 할인
-            } else {
-                alert('유효하지 않은 쿠폰 코드입니다.');
-                return; // 유효하지 않은 경우 함수를 종료
-            }
-
-            // 할인 금액 업데이트
-            document.getElementById('discount').innerText = discount + '원';
-
-            // 총 결제 금액 계산
-            const totalAmount = 50000; // 총 상품 금액
-            const shippingFee = 2500; // 배송비
-            const finalTotal = totalAmount + shippingFee - discount;
-
-            document.getElementById('totalPrice-num').innerText = finalTotal + '원';
-        }); */
-	    </script>
-	    
-        
+	           
 </body>
 </html>

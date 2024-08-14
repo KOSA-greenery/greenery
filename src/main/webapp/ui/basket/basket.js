@@ -50,7 +50,7 @@ $.ajax({
                             
                             <div class="basket-delete">
                                 <a href="#" class="abutton">
-                                    <img src="../../res/images/X버튼.png" alt="삭제 버튼" class="delete-icon" style="width: 30px; height: 30px;">
+                                    <img src="../../res/images/X-icon.png" alt="삭제 버튼" class="delete-icon" style="width: 30px; height: 30px;">
                                 </a>
                             </div>
                             
