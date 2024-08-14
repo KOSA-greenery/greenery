@@ -49,6 +49,8 @@
 	align-items: center;
 	gap: 20px;
 	margin-bottom: 15px;
+	font-size: 16px;
+	font-weight: bold;
 }
 
 .mypage-title-greeting img {
@@ -222,6 +224,12 @@
 	word-break: break-all;
 }
 
+.order-status {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+
 .item-desc {
 	color: #B1B1B1;
 }
@@ -240,6 +248,7 @@
 	font-size: 14px;
 	width: 60%;
 }
+
 .myinfo-list div {
 	display: flex;
 	align-items: center;
