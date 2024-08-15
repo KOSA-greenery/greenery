@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <title>화장품 상세페이지</title>
     <link rel="stylesheet" href="detailpage.css">
+    <link rel="stylesheet" href="detail-tab/reviews-select.css">
 </head>
 
 <body>
@@ -69,13 +69,16 @@
 
         <div class="currentSlide-container">
             <span class="dot" onclick="currentSlide(1)">
-                <img src="https://i.pinimg.com/564x/db/a1/f2/dba1f28adc32bc960e89ee4dd4ffa027.jpg" alt="currentSlide(1)" style="width: 25%">
+                <img src="https://i.pinimg.com/564x/db/a1/f2/dba1f28adc32bc960e89ee4dd4ffa027.jpg" alt="currentSlide(1)"
+                    style="width: 25%">
             </span>
             <span class="dot" onclick="currentSlide(2)">
-                <img src="https://i.pinimg.com/564x/d9/d3/82/d9d3829fc798b6107ca26649c3000b13.jpg" alt="currentSlide(2)" style="width: 25%">
+                <img src="https://i.pinimg.com/564x/d9/d3/82/d9d3829fc798b6107ca26649c3000b13.jpg" alt="currentSlide(2)"
+                    style="width: 25%">
             </span>
             <span class="dot" onclick="currentSlide(3)">
-                <img src="https://i.pinimg.com/564x/17/71/74/177174a71afb907c30f5af5563b7375d.jpg" alt="currentSlide(3)" style="width: 25%">
+                <img src="https://i.pinimg.com/564x/17/71/74/177174a71afb907c30f5af5563b7375d.jpg" alt="currentSlide(3)"
+                    style="width: 25%">
             </span>
         </div>
 
@@ -86,24 +89,16 @@
 
     <!-- 상세페이지, 리뷰페이지 -->
     <div class="tab">
-        <div class="tab1">
-            <button id="detailTab" class="tablinks" onclick="openTab(event, 'Detail')">상세정보</button>
-            <div id="dividerDetail" class="divider-detail"></div>
-        </div>
-        <div class="tab2">
-            <button id="reviewTab" class="tablinks" onclick="openTab(event, 'Review')">리뷰</button>
-            <div id="dividerReview" class="divider-review"></div>
-        </div>
+        <button class="tab-button tablinks" data-target="detail-info">상세정보</button>
+        <button class="tab-button tablinks" data-target="reviews-select">리뷰</button>
     </div>
 
-    <div id="Detail" class="tabcontent">
-        <img src="../../res/images/detailpage.png" alt="상세 이미지" class="detailpage" style="width: 780px">
-        <a href="../detail/detailpage.html"></a>
+    <div id="tab-content">
+        <!-- AJAX로 불러온 상세 페이지 or 리뷰 표시 -->
     </div>
 
-    <div id="Review" class="tabcontent">
-        <a href="../review/review.html"></a>
-    </div>
+
+
 
     <!-- 업버튼 -->
     <div class="main-products">
@@ -113,6 +108,7 @@
     <div id="footer"></div>
     <!-- 푸터를 삽입할 위치 -->
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="detailpage.js"></script>
 </body>
 
