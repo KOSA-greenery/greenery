@@ -9,6 +9,12 @@ $(document).ready(function () {
     }).fail(function () {
         console.error("JSON 파일을 불러오는 데 실패함");
     });
+
+    const query = new URLSearchParams(window.location.search).get("query");
+
+    if (query) {
+        $(".search-term").html(query);
+    }
 });
 
 function loadScript(url) {
@@ -38,7 +44,9 @@ function dataToHtml(products) {
             const productHtml = `
             <div class="product-item">
                 <div class="product-image-container">
-                    <img src="${product.imageUrls[0]}" alt="${product.productName}" class="product-image">
+                    <img src="${product.imageUrls[0]}" alt="${
+                product.productName
+            }" class="product-image">
                     <div class="product-icons">
                         <span class="icon like-icon">
                             <img src="../../res/images/heart.png" alt="찜하기 아이콘">
@@ -53,7 +61,9 @@ function dataToHtml(products) {
                 </div>
                 <div class="product-details">
                     <p class="product-name">${product.productName}</p>
-                    <p class="product-description">${product.mainDescription}</p>
+                    <p class="product-description">${
+                        product.mainDescription
+                    }</p>
                     <p class="product-price"><span class="price-amount">${product.price.toLocaleString()}</span>원</p>
                 </div>
             </div>`;
