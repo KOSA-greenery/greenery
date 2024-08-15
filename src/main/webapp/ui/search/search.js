@@ -1,8 +1,7 @@
 // 헤더, 푸터 파일 로드
 $(document).ready(function () {
-    loadHTML("../header/header.html", "header");
-    loadScript("../header/header.js");
-    loadHTML("../footer/footer.html", "footer");
+    $("#header").load("../header/header.html");
+    $("#footer").load("../footer/footer.html");
 
     $.getJSON("../../content/products.json", function (data) {
         dataToHtml(data.products);
@@ -13,20 +12,6 @@ $(document).ready(function () {
     handleQueryParams();
 });
 
-function loadScript(url) {
-    const script = document.createElement("script");
-    script.src = url;
-    script.type = "text/javascript";
-    document.head.appendChild(script);
-}
-function loadHTML(file, elementId) {
-    fetch(file)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById(elementId).innerHTML = data;
-        })
-        .catch(error => console.error(error));
-}
 function scrollToTop() {
     window.scrollTo({
         top: 0,
