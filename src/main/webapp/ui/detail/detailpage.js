@@ -1,20 +1,27 @@
-document.addEventListener('DOMContentLoaded', () => {
+// 헤더, 푸터 파일 로드
+$(document).ready(function () {
     $("#header").load("../header/header.html");
     $("#footer").load("../footer/footer.html");
+
+    $.getJSON("../../content/products.json", function (data) {
+        dataToHtml(data.products);
+    }).fail(function () {
+        console.error("JSON 파일을 불러오는 데 실패함");
+    });
 });
 
 // 찜 추가
 const wishlistButton = document.querySelector('.wishlist-button');
 
-wishlistButton.addEventListener('click', function() {
+wishlistButton.addEventListener('click', function () {
     const productDiv = this.closest('.product-info');
     const productNameSpan = document.querySelector('.product-title');
-    
+
     if (!productNameSpan) return;
     const productName = productNameSpan.innerText.trim();
-    
+
     this.classList.toggle('active'); // active 클래스를 토글
-    
+
     // 추가 기능: 위시리스트에 아이템 추가/제거 로직 구현 가능
     if (this.classList.contains('active')) {
         console.log("아이템이 위시리스트에 추가되었습니다.");
@@ -60,63 +67,101 @@ function showSlides(n) {
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
     /* let captionText = document.getElementById("caption"); */
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+        slides[i].style.display = "none";
     }
     for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+        dots[i].className = dots[i].className.replace(" active", "");
     }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-    captionText.innerHTML = dots[slideIndex-1].alt;
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    // captionText.innerHTML = dots[slideIndex-1].alt;
 }
 
+// ---------------------탭 - 상세정보,  리뷰 --------------------
+$(document).ready(function () {
+    $('.tab-button').on('click', function () {
+        var target = $(this).data('target') + '.html';
 
-//클릭시 상세페이지, 리뷰로 이동
-    document.addEventListener("DOMContentLodaded", function() {
-        document.getElementById("detailTab").click();            
+        //ajax 요청
+        $.ajax({
+            url: 'detail-tab/' + target,    // 각 탭에 맞는 html 파일 경로
+            method: 'GET',
+            success: function (data) {
+                $('#tab-content').html(data);
+                console.log('ajax 요청 성공');
+
+                if ($(this).data('target') === 'reviews-select') {
+                    loadReviews();  // 리뷰 데이터 불러옴
+                }
+            }.bind(this),
+            error: function () {
+                $('#tab-content').html('<p>내용을 불러오는 데 실패함.</p>');
+            }
+        });
     });
+    // 페이지 로드되면 기본적으로 detail탭이 열리게 
+    $('.tab-button').first().trigger('click');
+});
 
-function openTab(evt, tabName) {
-    var i, tabcontent, tablinks;
-    
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i=0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    
-    tabcontent = document.getElementsByClassName("tablinks");
-    for (i=0; i < tablinks.length; i++) {
-        tablinks[i].classList.remove("active");
-    }
-    
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.classList.add("active");
-}	        	
-    
-    document.getElementById('reviewTab').addEventListener('click', function() {
-        window.location.href = '../review/review.html';
-    });
+// 리뷰 json데이터 
+function loadReviews() {
+    $.ajax({
+        url: '../../content/reviews.json',
+        method: 'GET',
+        dataType: 'json',
+        success: function (data) {
+            console.log(data);  // 데이터 구조 확인
 
-
-
-// 동적으로 이미지 크기 맞추기
-const leftImage = document.querySelector('.slideshow-container');
-
-function adjustImageSize() {
-    const containerHeight = document.querySelector('.left').offsetHeight;
-    leftImage.style.height = `${containerHeight}px`;
-}
-
-window.addEventListener('resize', adjustImageSize);
-adjustImageSize(); // 초기 실행
-
-
-
-
+            if (Array.isArray(data.reviews)) {
+                $('#reviewList').empty(); // 기존 리뷰 내용 초기화
+                data.reviews.forEach(i => {
+                    // 별 이미지를 rating 개수만큼 생성
+                    let starHTML = '';
+                    const totalStars = 5;   // 총 별의 개수(5점 만점 기준) -> 별점 3개라고 치면 나머지는 안채워진 별로 2개 채움
+                    for (let j = 0; j < totalStars; j++) {
+                        if (j < i.rating) {
+                            starHTML += `<img src="../../res/images/fill-star.png" alt="별" class="star">`;
+                        } else {
+                            starHTML += `<img src="../../res/images/empty-star.png" alt="빈 별" class="star">`;
+                        }
+                    }
+                    const reviewHTML = `
+                        <div class="reviews">
+                            <div class="reviews-container">
+                                <div class="star-container">
+                                    <!-- 별 이미지가 들어갈 div태그 -->  
+                                    ${starHTML} <!-- 이미지 HTML을 여기에 추가 -->
+                                    <span class="star-cnt"><strong>${i.rating}</strong></span>
+                                </div>
             
+                                <div class="info-container">
+                                    <div class="user-id">${i.authorId}</div>
+                                    <span>${i.registrationDate}</span>
+                                </div>
+            
+                                <span class="review-span">${i.content}</span>
+                            </div>
+            
+                            <div class="img-box">
+                                <img src="${i.imageUrl}" alt="">
+                            </div>
+                        </div>
+                    `;
+                    $('#reviewList').append(reviewHTML);
+                });
+            }
+        },
+        error: function (err) {
+            console.error('리뷰 등록에 실패함', err);
+        }
+    });
+};
+
+
+
 /* 수량 조절 */
 function increase(button) {
     const productDiv = button.closest('.product-info'); // 부모 요소 찾기
@@ -131,7 +176,7 @@ function increase(button) {
     quantity += 1;
     quantitySpan.innerText = quantity;
 
-    /* 가격 업데이트 */ 
+    /* 가격 업데이트 */
     const pricePerUnit = parseFloat(priceSpan.getAttribute('data-price'));
     const totalPrice = (pricePerUnit * quantity).toLocaleString() + '원';
     priceSpan.innerText = totalPrice; // 가격 업데이트
@@ -140,21 +185,6 @@ function increase(button) {
     saveToLocalStorage(productDiv);
     console.log("수량 증가");
 }
-
-
-// 마이페이지에서 위시리스트 불러오기
-/*  function loadWishlist() {
-    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
-    const wishlistContainer = document.querySelector('.wishlist-container');
-    
-    wishlist.forEach(item => {
-        const itemElement = document.createElement('div');
-        itemElement.textContent = item;
-        wishlistContainer.appendChild(itemElement);
-    });
-} // 마이페이지 로드 시 호출
-document.addEventListener('DOMContentLoaded', loadWishlist); */
-
 
 
 
@@ -174,7 +204,7 @@ function decrease(button) {
     }
     quantitySpan.innerText = quantity;
 
-    /* 가격 업데이트 */ 
+    /* 가격 업데이트 */
     const pricePerUnit = parseFloat(priceSpan.getAttribute('data-price'));
     const totalPrice = (pricePerUnit * quantity).toLocaleString() + '원';
     priceSpan.innerText = totalPrice; // 가격 업데이트
@@ -218,11 +248,11 @@ function checkout() {
 
     /* document.getElementById('add-to-cart').addEventListener('click', function() {
         window.location.href = '../payment/payment.html'; */
-        sessionStorage.setItem('checkout', JSON.stringify(checkout));
+    sessionStorage.setItem('checkout', JSON.stringify(checkout));
     window.location.href = '../payment/payment.html'; // 결제 페이지로 이동 
 }
-    
-    
+
+
 function cart() {
     const cartItems = [];
     for (let i = 0; i < localStorage.length; i++) {
@@ -231,8 +261,8 @@ function cart() {
         cartItems.push(item);
     }
 
-sessionStorage.setItem('add-to-cart', JSON.stringify(cart));
-window.location.href = '../basket/basket.html'; // 장바구니 페이지로 이동 
+    sessionStorage.setItem('add-to-cart', JSON.stringify(cart));
+    window.location.href = '../basket/basket.html'; // 장바구니 페이지로 이동 
 }
 
 function scrollToTop() {
