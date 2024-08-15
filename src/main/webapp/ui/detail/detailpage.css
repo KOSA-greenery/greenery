@@ -1,7 +1,5 @@
 @charset "UTF-8";
-@import
-	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap')
-	;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap');
 
 body {
 	font-family: 'Helvetica', 'Noto Sans KR', sans-serif;
@@ -9,7 +7,7 @@ body {
 
 .container {
 	display: flex;
-	max-width: 1310px;
+	width: 75%;
 	margin: 0 auto;
 	/* padding: 20px; */
 	margin-top: 50px;
@@ -26,7 +24,7 @@ body {
 .right {
 	flex: 0.55;
 	padding: 20px;
-	display : flex;
+	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
@@ -48,34 +46,37 @@ body {
 }
 
 .description {
-	font-size: 18px; /* 설명 텍스트 크기 */
+	font-size: 18px;
+	/* 설명 텍스트 크기 */
 	line-height: 1.6;
 	color: #666;
 	margin: 0;
 }
 
 .slideshow-container {
-	width: 100%; /* 100% */
-	height: 568px; /* auto */
-	/* max-width: 500px;*/ 
-	/* max-height: 568px; */ 
+	width: 100%;
+	/* 100% */
+	height: 568px;
+	/* auto */
+	/* max-width: 500px;*/
+	/* max-height: 568px; */
 	border-radius: 5px;
 	object-fit: cover;
 	overflow: hidden;
 }
 
 .sideimg {
-display: flex;
-flex-wrap: nowrap;
-overflow: hidden;
-white-space: nowrap;
-height: 100px;
-max-width: 560px;
-margin: 0 202px;
-align-items: center;
-object-fit: cover;
-gap: 40px;
-justify-content: space-between;
+	display: flex;
+	flex-wrap: nowrap;
+	overflow: hidden;
+	white-space: nowrap;
+	height: 100px;
+	max-width: 560px;
+	margin: 0 202px;
+	align-items: center;
+	object-fit: cover;
+	gap: 40px;
+	justify-content: space-between;
 }
 
 .dot {
@@ -85,11 +86,12 @@ justify-content: space-between;
 .tab {
 	display: flex;
 	padding: 70px;
-	justify-content: center;	
+	justify-content: center;
 	align-items: center;
 }
 
-.tab1, .tab2 {
+.tab1,
+.tab2 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -97,65 +99,85 @@ justify-content: space-between;
 
 /* 기본 버튼 스타일 제거 */
 .tablinks {
-   background: none; /* 기본 배경 제거 */
-   border: none; /* 기본 테두리 제거 */
-   cursor: pointer;
-   padding: 0;
-   color: #a9a9a9; /* 기본 텍스트 색상 */
-   font-weight: 500; /* 기본 폰트 굵기 */
-   position: relative;
-   display: flex;
-   align-items: center;
-   transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease; /* 부드러운 전환 효과 */
-   text-align: center; /* 텍스트 중앙 정렬 */
+	background: none;
+	/* 기본 배경 제거 */
+	border: none;
+	/* 기본 테두리 제거 */
+	cursor: pointer;
+	padding: 0;
+	color: #a9a9a9;
+	/* 기본 텍스트 색상 */
+	font-weight: 500;
+	/* 기본 폰트 굵기 */
+	position: relative;
+	display: flex;
+	align-items: center;
+	transition: color 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+	/* 부드러운 전환 효과 */
+	text-align: center;
+	/* 텍스트 중앙 정렬 */
 }
 
 /* 버튼의 활성화 상태에 대한 스타일 */
 .tablinksactive {
-   color: black; /* 활성화된 탭의 텍스트 색상 */
-   font-weight: 500;
-   /* background-color: transparent; 배경 색상 제거
-   border: none; */ /* 테두리 제거 */
+	color: black;
+	/* 활성화된 탭의 텍스트 색상 */
+	font-weight: 500;
+	/* background-color: transparent; 배경 색상 제거
+   border: none; */
+	/* 테두리 제거 */
 }
 
 /* 버튼 클릭 시 기본 스타일이 유지되는 문제 해결 */
-.tablinks:focus, .tablinks:active {
-   outline: none; /* 포커스 시 기본 테두리 제거 */
-   background-color: transparent; /* 클릭 시 배경 색상 제거 */
-   border: none; /* 클릭 시 테두리 제거 */
+.tablinks:focus,
+.tablinks:active {
+	outline: none;
+	/* 포커스 시 기본 테두리 제거 */
+	background-color: transparent;
+	/* 클릭 시 배경 색상 제거 */
+	border: none;
+	/* 클릭 시 테두리 제거 */
 }
 
 /* 활성화된 탭의 구분선 스타일 */
 .tablinksactive:after {
-   content: "";
-   height: 2px; /* 활성화된 탭의 구분선 두께 */
-   background-color: black; /* 활성화된 탭의 구분선 색상 */
-   flex-grow: 1;
-   margin-top: 10px;
-   transition: background-color 0.3s ease, height 0.3s ease;
+	content: "";
+	height: 2px;
+	/* 활성화된 탭의 구분선 두께 */
+	background-color: black;
+	/* 활성화된 탭의 구분선 색상 */
+	flex-grow: 1;
+	margin-top: 10px;
+	transition: background-color 0.3s ease, height 0.3s ease;
 }
 
 /* 탭 1의 활성화된 상태에 대한 스타일 */
 .tab1 .tablinksactive {
-   color: black; /* 활성화된 탭의 텍스트 색상 */
+	color: black;
+	/* 활성화된 탭의 텍스트 색상 */
 }
 
-.tab1 #dividerDetail, .tab2 #dividerReview {
-   width: 640px;
-   height: 0.2px; /* 활성화된 탭의 구분선 두께 */
-   background-color: #a9a9a9; /* 활성화된 탭의 구분선 색상 */
-   margin-top: 20px;
-   transition: height 0.3s ease, background-color 0.3s ease;
+.tab1 #dividerDetail,
+.tab2 #dividerReview {
+	width: 640px;
+	height: 0.2px;
+	/* 활성화된 탭의 구분선 두께 */
+	background-color: #a9a9a9;
+	/* 활성화된 탭의 구분선 색상 */
+	margin-top: 20px;
+	transition: height 0.3s ease, background-color 0.3s ease;
 }
 
-.tab1 .tablinksactive ~ #dividerDetail {
+.tab1 .tablinksactive~#dividerDetail {
 	height: 2px;
 	background-color: black;
 }
 
-.tab2 .tablinksactive ~ #dividerReview {
-    height: 2px; /* 활성화된 탭의 구분선 두께 */
-    background-color: black; /* 활성화된 탭의 구분선 색상 */
+.tab2 .tablinksactive~#dividerReview {
+	height: 2px;
+	/* 활성화된 탭의 구분선 두께 */
+	background-color: black;
+	/* 활성화된 탭의 구분선 색상 */
 }
 
 
@@ -215,7 +237,8 @@ justify-content: space-between;
 	margin-top: 20px;
 }
 
-.buttons .add-to-cart, .buttons .checkout {
+.buttons .add-to-cart,
+.buttons .checkout {
 	padding: 10px 120px;
 	border-radius: 5px;
 	cursor: pointer;
@@ -250,14 +273,14 @@ justify-content: space-between;
 
 /* 기본 체크박스 스타일 제거 */
 .wishlist-button {
-   background: none;
-   border: none;
-   cursor: pointer;
-   padding:0;
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
 }
 
 .wishlist-button.active .wishlist {
-    content: url('../../res/images/fullheart-icon.png');
+	content: url('../../res/images/fullheart-icon.png');
 }
 
 
@@ -279,25 +302,25 @@ justify-content: space-between;
 }
 
 #Detail {
-  text-align: center;
+	text-align: center;
 }
 
 .scroll-btn-up {
-    z-index: 98;
-    position: fixed;
-    right: 2%;
-    bottom: 10%;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border: 1px solid #eeeeee;
-    border-radius: 20px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
-    background-color: #ffffff;
-    background-image: url("../../res/images/up_arrow.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 40%;
+	z-index: 98;
+	position: fixed;
+	right: 2%;
+	bottom: 10%;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	border: 1px solid #eeeeee;
+	border-radius: 20px;
+	box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.05);
+	background-color: #ffffff;
+	background-image: url("../../res/images/up_arrow.png");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 40%;
 }
 
 img:hover {
