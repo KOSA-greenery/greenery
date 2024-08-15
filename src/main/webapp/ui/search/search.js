@@ -10,11 +10,7 @@ $(document).ready(function () {
         console.error("JSON 파일을 불러오는 데 실패함");
     });
 
-    const query = new URLSearchParams(window.location.search).get("query");
-
-    if (query) {
-        $(".search-term").html(query);
-    }
+    handleQueryParams();
 });
 
 function loadScript(url) {
@@ -71,5 +67,20 @@ function dataToHtml(products) {
             // 생성한 HTML을 product-container에 추가
             $(".product-container").append(productHtml);
         });
+    }
+}
+
+function handleQueryParams() {
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("query");
+    const category = params.get("category");
+
+    if (query) {
+        $(".search-term").html(query);
+    }
+
+    if (category) {
+        $(".search-result-text").css("display", "none");
+        $("#header").after(`<div class="category-result">${category}</div>`);
     }
 }
