@@ -214,6 +214,7 @@ header {
     width: 80px;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 }
 
 .notice {
