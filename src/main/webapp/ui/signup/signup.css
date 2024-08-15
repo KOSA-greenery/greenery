@@ -20,7 +20,7 @@ body {
 
 .text-introduce {
     margin: 0 auto;
-    border-top: 2px solid lightgray;
+    border-top: 1px solid lightgray;
     width: 570px;
     padding-top: 35px;
     padding-bottom: 15px;
@@ -34,7 +34,7 @@ body {
 
 .input {
     height: 55px;
-    border: 2px solid lightgray;
+    border: 1px solid lightgray;
     border-radius: 10px;
     font-size: 16px;
     padding-left: 10px;
