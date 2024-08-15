@@ -1,15 +1,23 @@
 body {
-    font-family: 'Arial', sans-serif;
-    text-align: center;
+    font-family: 'Helvetica', 'Noto Sans KR', sans-serif;
 }
 
 .search-result-text {
     font-size: 30px;
     margin: 60px 0;
+    text-align: center;
 }
 
 .search-term {
     font-weight: bold;
+}
+
+.category-result {
+    font-size: 30px;
+    margin: 0 auto;
+    padding: 60px 0 40px 0;
+    width: 75%;
+    font-weight: 600;
 }
 
 .result-info {
