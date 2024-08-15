@@ -23,15 +23,24 @@ function searchTypeText() {
     }
 }
 
-function toSearchPage() {
-    const searchQuery = $(".header-search-input").val().trim();
-    if (searchQuery) {
+function redirectToPage(paramName, paramValue) {
+    if (paramValue) {
         // 검색 페이지 이동시 검색어를 파라미터로 전달
-        window.location.href = `../search/search.html?query=${encodeURIComponent(
-            searchQuery
+        window.location.href = `../search/search.html?${paramName}=${encodeURIComponent(
+            paramValue
         )}`;
     }
 }
+
+function toSearchPage() {
+    const searchQuery = $(".header-search-input").val().trim();
+    redirectToPage("query", searchQuery);
+}
+
+/*function toCategoryPage() {
+    const category = $(".category-span").data("category");
+    redirectToPage("category", category);
+}*/
 
 $(document).ready(() => {
     searchTypeText();
@@ -40,5 +49,8 @@ $(document).ready(() => {
         if (e.key === "Enter") {
             toSearchPage();
         }
+    });
+    $(".category-span").on("click", function () {
+        redirectToPage("category", $(this).data("category"));
     });
 });
