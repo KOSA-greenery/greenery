@@ -3,11 +3,11 @@ $(document).ready(function () {
     $("#footer").load("../footer/footer.html");
     scrollToTop();
 
-	$(".modal-image").click(() => {
-	        console.log("쿠폰 버튼 클릭됨");
-	        showAlertCoupon();
-	    });
-	});;
+    $(".modal-image").click(() => {
+        console.log("쿠폰 버튼 클릭됨");
+        showAlertCoupon();
+    });
+});;
 
 function scrollToTop() {
     window.scrollTo({
@@ -142,11 +142,11 @@ function saveToLocalStorage(productDiv) {
 }
 
 /* 체크 박스 전체 선택 */
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const allchk = document.querySelector('#allchk');
     const productCheckboxes = document.querySelectorAll('.product-checkbox');
 
-    allchk.addEventListener('click', function() {
+    allchk.addEventListener('click', function () {
         const isChecked = allchk.checked;
 
         productCheckboxes.forEach(checkBox => {
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     productCheckboxes.forEach(chk => {
-        chk.addEventListener('click', function() {
+        chk.addEventListener('click', function () {
             orderPrice();
             totalPriceCalculation(); // 체크 박스 클릭 시 총 가격 계산 업데이트
         });
@@ -183,10 +183,9 @@ $.ajax({
                 const productHtml = `
                     <div class="product">
                         <div class="product-body">
-                            <div class="product-picture">
                                 <input type="checkbox" class="product-checkbox">
                                 <div class="img"><img src="${product.imageUrls[0]}" alt="${product.productName}" class="picture"></div>
-                            </div>
+
                             <div class="product-label">
                                 <div class="product-name"><span><strong>${product.productName}</strong></span></div>
                                 <div class="product-description"><span>${product.summaryDescription}</span></div>
@@ -214,8 +213,26 @@ $.ajax({
     }
 });
 
-$(document).ready(function(){
-   $('#order-button').on('click',function(){
-    window.location.href = '../order/order.html';
-    }); 
+$(document).ready(function () {
+    $('#order-button').on('click', function () {
+        window.location.href = '../order/order.html';
+    });
+});
+
+// 전체선택 체크박스 클릭 시 상품 전체 체크 활성화
+$(document).ready(function () {
+    $('#allchk').prop('checked', true); // 페이지 로딩 시 전체선택이 활성화된 상태로 
+    $('.product-checkbox').prop('checked', true);
+    totalPriceCalculation();
+
+    $('#allchk').click(function () {
+        let isChecked = $(this).is(':checked'); // 전체 선택 체크박스의 체크 상태를 true, false로 저장
+        $('.product-checkbox').prop('checked', isChecked);
+        orderPrice();
+    });
+
+    $('.product-checkbox').change(function () {
+        orderPrice();
+        totalPriceCalculation();
+    });
 });
