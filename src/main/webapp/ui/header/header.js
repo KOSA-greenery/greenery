@@ -54,3 +54,7 @@ $(document).ready(() => {
         redirectToPage("category", $(this).data("category"));
     });
 });
+
+$(document).on('click', '.notices', function () {
+    window.location.href = '../notices/notices.html';
+});

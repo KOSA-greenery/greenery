@@ -1,7 +1,5 @@
 @charset "UTF-8";
-@import
-	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap')
-	;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap');
 
 body {
 	font-family: 'Helvetica', 'Noto Sans KR', sans-serif;
@@ -10,8 +8,8 @@ body {
 .notice-container {
 	display: flex;
 	margin-top: 100px;
-    flex-direction: column;
-    align-items: center;
+	flex-direction: column;
+	align-items: center;
 }
 
 .notice-inner {
@@ -38,13 +36,14 @@ body {
 
 .divider {
 	display: flex;
-    justify-content: space-between;
+	justify-content: space-between;
 	width: 75%;
 	border-top: 3px solid #191919;
 	margin: 0 auto;
 }
 
-.contents .divider, .content-title .divider {
+.contents .divider,
+.content-title .divider {
 	border: 0.2px solid rgba(0, 0, 0, 0.1);
 	width: 1270px;
 	margin: 0 auto;
@@ -71,7 +70,7 @@ body {
 	margin-right: 160px;
 }
 
-.content-title div{
+.content-title div {
 	margin: 20px auto;
 }
 
@@ -123,9 +122,3 @@ body {
 	margin: 70px auto;
 	cursor: pointer;
 }
-
-
-/* img {
-	display: flex;
-	width: 40px;
-}  */

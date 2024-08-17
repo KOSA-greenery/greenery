@@ -1,5 +1,5 @@
 header {
-	box-sizing: content-box;
+    box-sizing: content-box;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -62,7 +62,7 @@ header {
 .header-login,
 .header-mypage,
 .header-cart {
-	font-size: 13px;
+    font-size: 13px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,7 +161,7 @@ header {
     transform: translate(0, -6px) rotate(45deg);
 }
 
-.header-category-btn.open + .header-category-wrap {
+.header-category-btn.open+.header-category-wrap {
     display: block;
 }
 
@@ -186,7 +186,7 @@ header {
 }
 
 .category-wrap {
-	padding-left: 0px;
+    padding-left: 0px;
 }
 
 .category-wrap li {
@@ -230,4 +230,8 @@ header {
         margin-top: 125px;
         left: 50%;
     }
+}
+
+.notices {
+    cursor: pointer;
 }
