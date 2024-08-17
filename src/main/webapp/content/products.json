@@ -4,7 +4,7 @@
       "productId": 1,
       "productName": "수분 크림",
       "price": 25000,
-      "stock": 100,
+      "stock": 1,
       "imageUrls": [
         "../../res/images/productImages/1.png"
       ],
@@ -18,7 +18,7 @@
       "productId": 2,
       "productName": "매트 립스틱",
       "price": 18000,
-      "stock": 150,
+      "stock": 1,
       "imageUrls": [
         "../../res/images/productImages/2.png"
       ],
@@ -32,7 +32,7 @@
       "productId": 3,
       "productName": "바디 스크럽",
       "price": 22000,
-      "stock": 80,
+      "stock": 1,
       "imageUrls": [
         "../../res/images/productImages/3.png"
       ],
@@ -46,7 +46,7 @@
       "productId": 4,
       "productName": "헤어 오일",
       "price": 30000,
-      "stock": 60,
+      "stock": 1,
       "imageUrls": [
         "../../res/images/productImages/4.png"
       ],
@@ -60,7 +60,7 @@
       "productId": 5,
       "productName": "메이크업 브러시 세트",
       "price": 15000,
-      "stock": 200,
+      "stock": 1,
       "imageUrls": [
         "../../res/images/productImages/5.png"
       ],
@@ -74,7 +74,7 @@
       "productId": 6,
       "productName": "맨즈 스킨케어 세트",
       "price": 45000,
-      "stock": 75,
+      "stock": 1,
       "imageUrls": [
         "../../res/images/productImages/6.png"
       ],
@@ -88,7 +88,7 @@
       "productId": 7,
       "productName": "토너",
       "price": 20000,
-      "stock": 90,
+      "stock": 1,
       "imageUrls": [
         "../../res/images/productImages/7.png"
       ],
@@ -102,7 +102,7 @@
       "productId": 8,
       "productName": "아이섀도우 팔레트",
       "price": 35000,
-      "stock": 120,
+      "stock": 1,
       "imageUrls": [
         "../../res/images/productImages/8.png"
       ],
@@ -116,7 +116,7 @@
       "productId": 9,
       "productName": "바디 로션",
       "price": 27000,
-      "stock": 110,
+      "stock": 1,
       "imageUrls": [
         "../../res/images/productImages/9.png"
       ],
@@ -130,7 +130,7 @@
       "productId": 10,
       "productName": "헤어 마스크",
       "price": 32000,
-      "stock": 65,
+      "stock": 1,
       "imageUrls": [
         "../../res/images/productImages/10.png"
       ],
