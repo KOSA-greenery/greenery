@@ -41,10 +41,17 @@
                     <input type="text" placeholder="수량을 입력해주세요">
                     <div class="form-blank">개</div>
                 </div>
-                <div class="form-group">
+                <div class="image-thumnail">
                     <label>상품 대표 이미지 (썸네일)</label>
-                    <input type="file">
+                    <div class="image-upload-container" onclick="document.getElementById('image-input1').click();">
+                        <div class="image-preview" id="image-preview1">
+                            <span>+</span>
+                        </div>
+                    </div>
+                    <input type="file" id="image-input1" accept="image/*" style="display: none;"
+                        onchange="previewImage(event, 'image-preview1')" />     
                 </div>
+
                 <div class="form-group">
                     <label>상품 대표 설명 (썸네일)</label>
                     <input type="text" placeholder="상품의 대표 설명을 입력하세요">
@@ -53,9 +60,16 @@
                     <label>상품 상세페이지 대표 설명</label>
                     <input type="text" placeholder="상품의 핵심 특징을 간단히 설명하세요">
                 </div>
-                <div class="form-group">
+                <div class="image-thumnail">
                     <label>상품 상세페이지 상세정보 설명</label>
-                    <div id="summernote"></div>
+                    <div class="image-upload-container" onclick="document.getElementById('image-input2').click();">
+                        <div class="image-preview" id="image-preview2">
+                            <span>+</span>
+                        </div>
+                    </div>
+                    <input type="file" id="image-input2" accept="image/*" style="display: none;"
+                        onchange="previewImage(event, 'image-preview2')" />    
+                    <!-- <div id="summernote"></div> -->
                     <!-- <textarea rows="5" placeholder="상품에 대한 상세한 설명을 입력하세요"></textarea> -->
                 </div>
                 <div class="btn-register-div">

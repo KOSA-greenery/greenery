@@ -10,3 +10,22 @@ $('#product-name').on('input', function () {
 
 	$('#charCount').text(currentLength + " / " + maxLength);
 });
+
+/* 사진 업로드 */
+function previewImage(event, previewId) {
+    const file = event.target.files[0]; 
+    const imagePreview = document.getElementById(previewId);
+
+    if (file) {
+        const reader = new FileReader(); 
+        reader.onload = function (e) {
+            imagePreview.innerHTML = `<img src="${e.target.result}" />`;
+        };
+        reader.readAsDataURL(file);
+    } else {
+        imagePreview.innerHTML = `<span>+</span>`;
+    }
+}
+
+
+
