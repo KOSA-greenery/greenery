@@ -8,9 +8,6 @@
     font-family: 'Helvetica', 'Noto Sans KR', sans-serif;
 }
 
-a {
-    text-decoration: none;
-}
 body {
     justify-content: center;
     flex-direction: column;
@@ -104,7 +101,7 @@ input[type="checkbox"]:checked::after {
 }
 .product-label {
     margin: 0 10px 95px 15px;
-    width: 230px;  
+    width: 240px;  
 }
 .product-description {
 	margin-top: 8px;
@@ -178,7 +175,9 @@ input[type="checkbox"]:checked::after {
     display: flex; /* 버튼 그룹을 수평으로 정렬 */
 }
 
-button {
+#have-coupon,.btn {
+	background: none; /* 기본 배경 제거 */
+    border: none;
     background-color: transparent;
     color: black; /* 버튼 글자색 */
     border: 0.5px solid black;
@@ -209,7 +208,7 @@ button {
     border: 1.5px solid black;
     margin: 0 0 60px 0;
 }
-.payment-info-body-content2,
+.orderPrice,
 .delivery,
 .coupon  {
     display: flex;
@@ -339,4 +338,35 @@ select {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 40%;
+}
+
+.alert-coupon {
+    display: none; /* 초기 상태에서는 보이지 않도록 설정 */
+    position: fixed; /* 고정된 위치 */
+    top: 20px; /* 상단 여백 */
+    left: 50%;
+    transform: translateX(-50%); /* 중앙 정렬 */
+    background-color: #000000;
+    color: #ffffff;
+    padding: 0 10px 0 10px;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-size: 12px;
+    z-index: 1000; /* 다른 요소 위에 표시되도록 설정 */
+    transition: opacity 0.3s ease-in-out; /* 부드러운 애니메이션 효과 */
+}
+
+.alert-coupon.show {
+    display: flex; /* show 클래스가 추가되면 보이도록 설정 */
+    opacity: 1; /* 불투명도 설정 */
+}
+
+
+.img-alert-coupon {
+    width: 14px;
+    margin-right: 7px;
 }

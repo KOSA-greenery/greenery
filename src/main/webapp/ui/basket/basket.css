@@ -104,7 +104,7 @@ input[type="checkbox"]:checked::after {
 }
 .product-label {
     margin: 0 10px 95px 15px;
-    width: 230px;  
+    width: 240px;  
 }
 .product-description {
 	margin-top: 8px;
@@ -154,7 +154,7 @@ input[type="checkbox"]:checked::after {
     top: 200px;
     border: 1px solid #ccc; /* 회색 테두리 */
     padding: 10px; /* 내부 여백 */
-    height: 400px; /* 고정된 높이 */
+    height: 360px; /* 고정된 높이 */
 
 }
 
@@ -178,7 +178,9 @@ input[type="checkbox"]:checked::after {
     display: flex; /* 버튼 그룹을 수평으로 정렬 */
 }
 
-button {
+.btn {
+	background: none; /* 기본 배경 제거 */
+    border: none;
     background-color: transparent;
     color: black; /* 버튼 글자색 */
     border: 0.5px solid black;
@@ -187,16 +189,7 @@ button {
     /*margin: 0 10px;  버튼 간의 간격 */
     font-size: 13px; /* 버튼 글자 크기 */
 }
-.apply-coupon{
-	background-color: #CFF7D3;
-	color: #0F5E32;
-	border: none;
-	border-radius: 5px;
-	padding: 8px 40px;
-	cursor: pointer;
-	transition: background-color 0.3s;
-	font-size: 14px
-}
+
 #order-button { /* 결제정보 버튼 */
     background-color: #CFF7D3;
     border: none;
@@ -209,7 +202,7 @@ button {
     border: 1.5px solid black;
     margin: 0 0 60px 0;
 }
-.payment-info-body-content2,
+.orderPrice,
 .delivery,
 .coupon  {
     display: flex;
@@ -259,37 +252,7 @@ a {
 	justify-content: space-between;
     width: 200px;
 }
-.coupon-info {
-	margin: 20px 0;
-}
 
-.coupon-title {
-	display: flex;
-	align-items: flex-end;
-}
-
-.coupon-title h1 {
-	margin-left: 0;
-	margin-bottom: 20px;
-}
-
-#have-coupon {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.coupon-input-container {
-	display: flex; 
-	align-items: center;
-	margin-top: 10px;
-}
-.coupon-label {
-	margin-right: 10px;
-	font-size: 16px;
-
-}
 .custom-select {
 	position: relative;
 	flex: 1; 
@@ -308,15 +271,6 @@ select {
 	cursor: pointer;
 }
 
-.dropdown-icon {
-	width: 16px;
-	height: 16px;
-	position: absolute;
-	right: 10px;
-	top: 50%;
-	transform: translateY(-50%);
-	pointer-events: none;
-}
 
 .divider {
 	border-top: 1px solid #ddd;
@@ -339,3 +293,4 @@ select {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 40%;
+}
