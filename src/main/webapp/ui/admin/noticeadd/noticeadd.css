@@ -3,6 +3,12 @@
         margin-bottom: 20px;
     }
 
+    .container-form {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
     .form-group {
         display: flex;
         border: 1px solid #ccc;
@@ -33,12 +39,18 @@
         align-self: center;
         width: 100px;
     }
+    
+    .container-textarea {
+        display: flex;
+        border: 1px solid #ccc;
+    }
 
-    .form-group textarea {
-        margin-left: 10px;
+    .textarea {
+        padding-left: 10px;
         flex-grow: 1;
         padding: 10px;
         border: none;
+        height: 100%;
     }
 
     .btn-register-div {
