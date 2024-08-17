@@ -4,10 +4,10 @@ function getContent(url) {
         method: "GET",
         dataType: "html",
         success: function (data) {
-			$(".mypage-content").append(data);
-			if (url === "likedProducts") {
-				getData();
-			} else if (url === "orderList") {
+            $(".mypage-content").append(data);
+            if (url === "likedProducts") {
+                getData();
+            } else if (url === "orderList") {
                 getReview();
             }
         },
@@ -23,9 +23,8 @@ function dataToHtml(products) {
             const productHtml = `
             <div class="product-item">
                 <div class="product-image-container">
-                    <img src="${product.imageUrls[0]}" alt="${
-                product.productName
-            }" class="product-image">
+                    <img src="${product.imageUrls[0]}" alt="${product.productName
+                }" class="product-image">
                     <div class="product-icons">
                         <span class="icon like-icon active">
                             <img src="../../res/images/fill_heart.png" alt="찜하기 아이콘">
@@ -40,9 +39,8 @@ function dataToHtml(products) {
                 </div>
                 <div class="product-details">
                     <p class="product-name">${product.productName}</p>
-                    <p class="product-description">${
-                        product.mainDescription
-                    }</p>
+                    <p class="product-description">${product.mainDescription
+                }</p>
                     <p class="product-price"><span class="price-amount">${product.price.toLocaleString()}</span>원</p>
                 </div>
             </div>`;
@@ -73,7 +71,7 @@ function getReview() {
         method: "GET",
         dataType: "html",
         success: function (data) {
-			$(".order-status").append(data);
+            $(".order-status").append(data);
         },
         error: function (err) {
             console.error("Error fetching product data:", err);
@@ -84,13 +82,27 @@ function getReview() {
 $(document).ready(function () {
     $("#header").load("../header/header.html");
     $("#footer").load("../footer/footer.html");
-	getContent("likedProducts");
-	$(".mypage-menu").click(function() {
-		$(".mypage-content").empty();
-		getContent($(this).data("url"));
-	})
+    getContent("likedProducts");
+
+    // 마이페이지 로딩 시 기본적으로 찜한 상품 탭 글씨 진하게 보여줌
+    $('.mypage-menu').each(function () {
+        if ($(this).data('url') === 'likedProducts') {
+            $(this).html('<strong>' + $(this).text() + '</strong>');
+        }
+    });
+    // 메뉴 탭 클릭 시
+    $(".mypage-menu").click(function () {
+        $(".mypage-content").empty();
+        getContent($(this).data("url"));
+
+        $('.mypage-menu').html(function () {
+            return $(this).text();  // 다른 탭 클릭 시 텍스트 원래대로(진하게x)
+        });
+        $(this).html('<strong>' + $(this).text() + '</strong>');    // 클릭한 메뉴 탭 글씨 진하게 함
+    });
+
     // 동적으로 생성된 like 아이콘에 대한 이벤트 처리
-    $(document).on('click', '.icon.like-icon', function() {
+    $(document).on('click', '.icon.like-icon', function () {
         $(this).toggleClass("active");
         let heartIcon = $(this).find("img");
         if ($(this).hasClass("active")) {
@@ -100,4 +112,6 @@ $(document).ready(function () {
         }
     });
 });
+
+
 
