@@ -66,6 +66,7 @@ function isOverExp(name) {
     }
 }
 
+// 쿠폰 받기 시 알림창
 function showAlertCoupon() {
     $(".modal-container").hide();
     $(".alert-coupon").addClass("show");
@@ -74,15 +75,15 @@ function showAlertCoupon() {
     }, 2000);
 }
 
+// 상품 데이터 가져오기
 function dataToHtml(products) {
     if (Array.isArray(products)) {
         products.forEach(product => {
             const productHtml = `
             <div class="product-item">
                 <div class="product-image-container">
-                    <img src="${product.imageUrls[0]}" alt="${
-                product.productName
-            }" class="product-image">
+                    <img src="${product.imageUrls[0]}" alt="${product.productName
+                }" class="product-image">
                     <div class="product-icons">
                         <span class="icon like-icon">
                             <img src="../../res/images/heart.png" alt="찜하기 아이콘">
@@ -97,9 +98,8 @@ function dataToHtml(products) {
                 </div>
                 <div class="product-details">
                     <p class="product-name">${product.productName}</p>
-                    <p class="product-description">${
-                        product.mainDescription
-                    }</p>
+                    <p class="product-description">${product.mainDescription
+                }</p>
                     <p class="product-price"><span class="price-amount">${product.price.toLocaleString()}</span>원</p>
                 </div>
             </div>`;
@@ -109,7 +109,7 @@ function dataToHtml(products) {
         });
     }
 }
-
+// 정렬(신상품, 가격 오름차순, 가격 내림차순)
 function sortProducts(products, sortOption) {
     switch (sortOption) {
         case "price-asc":
@@ -177,7 +177,7 @@ $(document).ready(function () {
         );
     });
     // 동적으로 생성된 like 아이콘에 대한 이벤트 처리
-    $(document).on('click', '.icon.like-icon', function() {
+    $(document).on('click', '.icon.like-icon', function () {
         $(this).toggleClass("active");
         let heartIcon = $(this).find("img");
         if ($(this).hasClass("active")) {
@@ -186,4 +186,9 @@ $(document).ready(function () {
             heartIcon.attr("src", "../../res/images/heart.png")
         }
     });
+});
+
+
+$(document).on('click', '.product-image', function () {
+    window.location.href = '../detail/detailpage.html';
 });
