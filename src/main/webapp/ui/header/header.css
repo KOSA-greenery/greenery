@@ -15,9 +15,10 @@ header {
 }
 
 .logo {
-    font-size: 32px;
+	width: 75%;
+    /* font-size: 32px;
     font-weight: 500;
-    color: #0f5a20;
+    color: #0f5a20; */
 }
 
 .header-search {
@@ -26,7 +27,8 @@ header {
     margin-top: 63px;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 22.5%;
+    width: 26%;
+    /* width: 22.5%; */
     display: flex;
     align-items: center;
 }
@@ -73,8 +75,8 @@ header {
 }
 
 .header-nav-icon {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     margin-bottom: 7px;
 }
 
@@ -88,12 +90,12 @@ header {
 
 .header-cart-badge {
     position: absolute;
-    top: -0.6rem;
-    right: 0.2rem;
+    top: -0.1rem;
+    right: 0.5rem;
     width: 1.2rem;
     height: 1.2rem;
     border-radius: 50%;
-    background-color: #0f5a20;
+    background-color: #00a372;
     color: #ffffff;
     text-align: center;
     line-height: 1.2rem;
@@ -233,5 +235,8 @@ header {
 }
 
 .notices {
+	margin-top: 10px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
 }
