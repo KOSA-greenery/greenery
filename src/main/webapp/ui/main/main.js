@@ -82,8 +82,9 @@ function dataToHtml(products) {
             const productHtml = `
             <div class="product-item">
                 <div class="product-image-container">
-                    <img src="${product.imageUrls[0]}" alt="${product.productName
-                }" class="product-image">
+                    <img src="${product.imageUrls[0]}" alt="${
+                product.productName
+            }" class="product-image">
                     <div class="product-icons">
                         <span class="icon like-icon">
                             <img src="../../res/images/heart.png" alt="찜하기 아이콘">
@@ -98,8 +99,9 @@ function dataToHtml(products) {
                 </div>
                 <div class="product-details">
                     <p class="product-name">${product.productName}</p>
-                    <p class="product-description">${product.mainDescription
-                }</p>
+                    <p class="product-description">${
+                        product.mainDescription
+                    }</p>
                     <p class="product-price"><span class="price-amount">${product.price.toLocaleString()}</span>원</p>
                 </div>
             </div>`;
@@ -176,19 +178,23 @@ $(document).ready(function () {
             $(".toolbar-category .active-category").data("category")
         );
     });
-    // 동적으로 생성된 like 아이콘에 대한 이벤트 처리
-    $(document).on('click', '.icon.like-icon', function () {
-        $(this).toggleClass("active");
-        let heartIcon = $(this).find("img");
-        if ($(this).hasClass("active")) {
-            heartIcon.attr("src", "../../res/images/fill_heart.png");
-        } else {
-            heartIcon.attr("src", "../../res/images/heart.png")
-        }
-    });
 });
 
+$(document).on("click", ".product-image", function () {
+    window.location.href = "../detail/detailpage.html";
+});
 
-$(document).on('click', '.product-image', function () {
-    window.location.href = '../detail/detailpage.html';
+$(document).on("click", ".buy-icon", function () {
+    window.location.href = "../payment/payment.html";
+});
+
+// 동적으로 생성된 like 아이콘에 대한 이벤트 처리
+$(document).on("click", ".icon.like-icon", function () {
+    $(this).toggleClass("active");
+    let heartIcon = $(this).find("img");
+    if ($(this).hasClass("active")) {
+        heartIcon.attr("src", "../../res/images/fill_heart.png");
+    } else {
+        heartIcon.attr("src", "../../res/images/heart.png");
+    }
 });
