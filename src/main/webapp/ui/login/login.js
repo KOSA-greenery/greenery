@@ -30,10 +30,20 @@ function inputPasswordCheck() {
 }
 
 document.querySelector('#IconClose').addEventListener('click', function() {
-    window.location.href = '../main/main.html'; // 이동할 URL을 입력하세요
+    window.location.href = '../main/main.html';
 });
 
 document.querySelector('#boxSignup').addEventListener('click', function() {
-    window.location.href = '../signup/signup.html'; // 이동할 URL을 입력하세요
+    window.location.href = '../signup/signup.html';
+});
+
+document.getElementById('btnLogin').addEventListener('click', function() {
+    if ($('#checkBox').is(':checked')) {
+        window.location.href = '../admin/mainadmin/mainadmin.html';
+        console.log('Checkbox is checked');
+    } else {
+        window.location.href = '../main/main.html';
+        console.log('Checkbox is not checked');
+    }
 });
 

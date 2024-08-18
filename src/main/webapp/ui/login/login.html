@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>로그인</title>
     <link href="login.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
@@ -21,14 +22,15 @@
 
     <div class="container-form1">
         <div class="container-form2">
-            <form action="../main/main.html">
+            <form>
                 <input id="inputId" class="input-idpassword" type="text" name="userId" placeholder="아이디 입력"
                     required><br>
                 <div id="inputIdMessage"></div>
                 <input id="inputPassword1" class="input-idpassword" type="password" name="userPassword"
                     placeholder="비밀번호 입력(영문, 숫자, 특수문자 조합)" required><br>
                 <div id="inputPasswordMessage1"></div>
-                <input id="btnLogin" class="btn-login" type="submit" value="로그인">
+                <!-- <input id="btnLogin" class="btn-login" type="submit" value="로그인"> -->
+                <button id="btnLogin" class="btn-login">로그인</button>
             </form>
             <div id="boxSignup" class="box-signup">
                 <div>아직 회원이 아니신가요?</div>
@@ -38,7 +40,7 @@
                 </div>
             </div>
             <div class="admin-login">
-                <input type="checkbox">
+                <input  id="checkBox" type="checkbox">
                 <div>관리자로그인</div>
             </div>
         </div>
