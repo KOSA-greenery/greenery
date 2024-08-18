@@ -1,7 +1,8 @@
-let slideIndex = 1;
+let slideIndex = 1;     // 슬라이드 인덱스
 let products = [];
 
-function autoSlides() {
+// ---------------------슬라이드 관련 함수 ----------------
+function autoSlides() {     // 슬라이드 자동으로 넘김
     showSlides(slideIndex);
 
     // 자동 슬라이드
@@ -10,50 +11,51 @@ function autoSlides() {
     }, 7000); // 7초마다 슬라이드 변경
 }
 
-function plusSlides(n) {
+function plusSlides(n) {    // 슬라이드 인덱스를 +1 시켜서 다음 슬라이드로 넘김
     showSlides((slideIndex += n));
 }
 
-function currentSlide(n) {
+function currentSlide(n) {      // dots를 클릭하면 인덱스에 해당하는 현재 슬라이드 보여줌 
     showSlides((slideIndex = n));
 }
 
 function showSlides(n) {
     let slides = document.getElementsByClassName("banner_slides");
-    let dots = document.getElementsByClassName("banner-indicator-btn");
-    if (n > slides.length) {
+    let dots = document.getElementsByClassName("banner-indicator-btn"); // 배너에서 동그라미 버튼
+    if (n > slides.length) {        // 슬라이드가 전체 길이보다 커지면 첫번째 슬라이드로 다시 넘어감
         slideIndex = 1;
     }
     if (n < 1) {
         slideIndex = slides.length;
     }
-    Array.from(slides).forEach(slide => (slide.style.display = "none"));
-    Array.from(dots).forEach(dot => dot.classList.remove("active"));
-    slides[slideIndex - 1].style.display = "block";
+    Array.from(slides).forEach(slide => (slide.style.display = "none"));    // 다른 배너 상태 none
+    Array.from(dots).forEach(dot => dot.classList.remove("active"));        // 다른 배너 active해제
+    slides[slideIndex - 1].style.display = "block";     //none 상태를 다시 block으로 해서 보이게
     dots[slideIndex - 1].className += " active";
 }
 
+// 배너 밑의 카테고리들 
 function clickCategoryBtn(target) {
-    let categoryBtns = $(".toolbar-category").children("button");
+    let categoryBtns = $(".toolbar-category").children("button");   // 하위 요소인 버튼들을 다 가져옴
     Array.from(categoryBtns).forEach(categoryBtn =>
-        categoryBtn.classList.remove("active-category")
+        categoryBtn.classList.remove("active-category") // 클릭되지 않은 버튼 액티브 지움(비활성화)
     );
-    target.addClass("active-category");
+    target.addClass("active-category"); // 현재 클릭한 버튼 액티브 추가(활성화)
 }
-
+// 스크롤 올리기
 function scrollToTop() {
     window.scrollTo({
         top: 0,
         behavior: "smooth",
     });
 }
-
+// -------------------팝업- 오늘 하루 보지 않기-------------------
 // 로컬 스토리지에 현재 시간 + 1일을 ms 단위로 저장
 function setTime(name, exp) {
     let date = new Date();
-    date = date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000); // 일 단위를 ms 단위로 변환하여 더하기
+    date = date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000); // 일 단위를 ms 단위로 변환하여 더하기(내일 시간을 넣어줌)
     localStorage.setItem(name, date);
-    $(".modal-container").css("display", "none");
+    $(".modal-container").css("display", "none");   // 오늘 하루 보지 않기 누르면 display none으로 해서 안보이게
 }
 
 // 하루를 넘겼는지 여부 확인
@@ -69,10 +71,10 @@ function isOverExp(name) {
 // 쿠폰 받기 시 알림창
 function showAlertCoupon() {
     $(".modal-container").hide();
-    $(".alert-coupon").addClass("show");
+    $(".alert-coupon").addClass("show");    // show -> 쿠폰 화면에 보이게
     setTimeout(() => {
         $(".alert-coupon").removeClass("show");
-    }, 2000);
+    }, 2000);       // 2초동안 보이게
 }
 
 // 상품 데이터 가져오기
@@ -82,9 +84,8 @@ function dataToHtml(products) {
             const productHtml = `
             <div class="product-item">
                 <div class="product-image-container">
-                    <img src="${product.imageUrls[0]}" alt="${
-                product.productName
-            }" class="product-image">
+                    <img src="${product.imageUrls[0]}" alt="${product.productName
+                }" class="product-image">
                     <div class="product-icons">
                         <span class="icon like-icon">
                             <img src="../../res/images/heart.png" alt="찜하기 아이콘">
@@ -93,15 +94,14 @@ function dataToHtml(products) {
                             <img src="../../res/images/cart_icon2.png" alt="장바구니 아이콘">
                         </span>
                         <span class="icon buy-icon">
-                            <img src="../../res/images/dollar.png" alt="구매하기 아이콘">
+                            <img src="../../res/images/dollar.png" alt="구매하기 아이콘" class="payment-img">
                         </span>
                     </div>
                 </div>
                 <div class="product-details">
                     <p class="product-name">${product.productName}</p>
-                    <p class="product-description">${
-                        product.mainDescription
-                    }</p>
+                    <p class="product-description">${product.mainDescription
+                }</p>
                     <p class="product-price"><span class="price-amount">${product.price.toLocaleString()}</span>원</p>
                 </div>
             </div>`;
@@ -144,7 +144,7 @@ function getData() {
         dataType: "json",
         success: function (data) {
             products = data.products;
-            filteredProducts();
+            filteredProducts();     // 데이터 불러올 때 성공하면 filteredProducts() 호출
         },
         error: function (err) {
             console.error("Error fetching product data:", err);
@@ -178,23 +178,23 @@ $(document).ready(function () {
             $(".toolbar-category .active-category").data("category")
         );
     });
+    // 동적으로 생성된 like 아이콘에 대한 이벤트 처리
+    $(document).on('click', '.icon.like-icon', function () {
+        $(this).toggleClass("active");
+        let heartIcon = $(this).find("img");
+        if ($(this).hasClass("active")) {
+            heartIcon.attr("src", "../../res/images/fill_heart.png");
+        } else {
+            heartIcon.attr("src", "../../res/images/heart.png")
+        }
+    });
 });
 
-$(document).on("click", ".product-image", function () {
-    window.location.href = "../detail/detailpage.html";
+
+$(document).on('click', '.product-image', function () {
+    window.location.href = '../detail/detailpage.html';
 });
 
-$(document).on("click", ".buy-icon", function () {
-    window.location.href = "../payment/payment.html";
-});
-
-// 동적으로 생성된 like 아이콘에 대한 이벤트 처리
-$(document).on("click", ".icon.like-icon", function () {
-    $(this).toggleClass("active");
-    let heartIcon = $(this).find("img");
-    if ($(this).hasClass("active")) {
-        heartIcon.attr("src", "../../res/images/fill_heart.png");
-    } else {
-        heartIcon.attr("src", "../../res/images/heart.png");
-    }
+$(document).on('click', '.buy-icon', function () {
+    window.location.href = '../payment/payment.html';
 });
