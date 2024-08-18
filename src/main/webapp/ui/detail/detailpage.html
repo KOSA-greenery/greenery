@@ -35,13 +35,17 @@
         </div>
 
         <div class="right">
+        <div class= "title-container">
             <p class="brand-name">브랜드 이름</p>
             <p class="product-title">히알루론산 앰플 50ml</p>
+            </div>
+            <div class="description-container">
             <div class="divider"></div>
             <p class="description">
                 우수한 수분력, 다양한 피부 타입에 적합함, 쾌적한 향기가 피부를 수분감있고 부드럽게 가꾸어 줍니다. 친환경 비건제품으로 예민한 피부에 적합한 제품입니다.
             </p>
             <div class="divider"></div>
+            </div>
             <div class="product-info">
                 <div class="product-quantity">
                     <button onclick="decrease(this)">-</button>
@@ -88,10 +92,18 @@
     </div>
 
     <!-- 상세페이지, 리뷰페이지 -->
+    <div class="tab-container">
     <div class="tab">
+    <div class="tab-item">
         <button class="tab-button tablinks" data-target="detail-info">상세정보</button>
+        <div class="detail-divider"></div>
+        </div>
+        <div class="tab-item">
         <button class="tab-button tablinks" data-target="reviews-select">리뷰</button>
+        <div class="reviews-divider"></div>
     </div>
+        </div>
+        </div>
 
     <div id="tab-content">
         <!-- AJAX로 불러온 상세 페이지 or 리뷰 표시 -->

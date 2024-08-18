@@ -106,6 +106,33 @@ $(document).ready(function () {
     $('.tab-button').first().trigger('click');
 });
 
+// 탭 버튼 클릭 시 색상 변경
+document.addEventListener('DOMContentLoaded', function() {
+	const buttons = document.querySelectorAll('.tab-button');
+	const dividers = document.querySelectorAll('.divider');
+	
+	buttons.forEach(button => {
+		button.addEventListener('click', () => {
+			buttons.forEach(btn => btn.classList.remove('active'));
+			dividers.forEach(div => {
+				div.style.backgroundColor = '#a9a9a9';
+				div.style.height = '0.2px';
+				});
+			
+			button.classList.add('active');
+			
+			const index = Array.from(buttons).indexof(button);
+			const activeDivider = dividers[index];
+			activeDivider.style.backgroundColor = 'black';
+			activeDivider.style.height = '2px';
+		});
+	});
+});
+
+
+
+
+
 // 리뷰 json데이터 
 function loadReviews() {
     $.ajax({
