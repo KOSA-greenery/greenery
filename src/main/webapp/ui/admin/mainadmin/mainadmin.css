@@ -1,5 +1,5 @@
-
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -54,4 +54,12 @@ html, body {
     height: 20px;
 }
 
+.header-logo:hover {
+    cursor: pointer;
+}
 
+.header-logo {
+    font-size: 32px;
+    font-weight: 500;
+    color: #0f5a20;
+}

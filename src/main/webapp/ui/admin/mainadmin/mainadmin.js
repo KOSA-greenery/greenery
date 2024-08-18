@@ -69,9 +69,6 @@ $('#noticeselect').on('click', function () {
 // 페이지 로드되면 기본적으로 detail탭이 열리게 
 $('#productadd').first().trigger('click');
 
-
-
-
-
-
-
+$(document).on('click', '.header-logo', function () {
+	window.location.href = '../../main/main.html';
+});
