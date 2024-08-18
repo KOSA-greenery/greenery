@@ -55,6 +55,6 @@ $(document).ready(() => {
     });
 });
 
-$(document).on('click', '.notices', function () {
-    window.location.href = '../notices/notices.html';
+$(document).on("click", ".notice", function () {
+    window.location.href = "../notices/notices.html";
 });
