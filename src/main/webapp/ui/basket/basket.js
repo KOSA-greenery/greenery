@@ -150,7 +150,7 @@ $(document).on('click', '.delete-icon', function () {
 $('.btn').on('click', function () {
     deleteSelected();
 });
-function deleteSelected() {
+function deleteSelected() {  
     $('.product-checkbox:checked').each(function () {
         $(this).closest('.product').remove(); // 체크된 상품 삭제
     });
