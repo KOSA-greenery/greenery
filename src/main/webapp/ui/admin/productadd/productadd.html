@@ -43,13 +43,31 @@
                 </div>
                 <div class="image-thumnail">
                     <label>상품 대표 이미지 (썸네일)</label>
-                    <div class="image-upload-container" onclick="document.getElementById('image-input1').click();">
-                        <div class="image-preview" id="image-preview1">
+                    <div class="image-upload-container">
+                        <div class="image-preview" id="image-preview1" onclick="document.getElementById('image-input1').click();">
                             <span>+</span>
                         </div>
-                    </div>
-                    <input type="file" id="image-input1" accept="image/*" style="display: none;"
-                        onchange="previewImage(event, 'image-preview1')" />     
+                        <input type="file" id="image-input1" accept="image/*" style="display: none;"
+                            onchange="previewImage(event, 'image-preview1')" />
+
+                        <div class="image-preview" id="image-preview2" onclick="document.getElementById('image-input2').click();">
+                            <span>+</span>
+                        </div>
+                        <input type="file" id="image-input2" accept="image/*" style="display: none;"
+                            onchange="previewImage(event, 'image-preview2')" />
+                            
+                        <div class="image-preview" id="image-preview3" onclick="document.getElementById('image-input3').click();">
+                            <span>+</span>
+                        </div>
+                        <input type="file" id="image-input3" accept="image/*" style="display: none;"
+                            onchange="previewImage(event, 'image-preview3')" />
+
+                        <div class="image-preview" id="image-preview4" onclick="document.getElementById('image-input4').click();">
+                            <span>+</span>
+                        </div>
+                        <input type="file" id="image-input4" accept="image/*" style="display: none;"
+                            onchange="previewImage(event, 'image-preview4')" />
+                    </div>  
                 </div>
 
                 <div class="form-group">
@@ -62,13 +80,13 @@
                 </div>
                 <div class="image-thumnail">
                     <label>상품 상세페이지 상세정보 설명</label>
-                    <div class="image-upload-container" onclick="document.getElementById('image-input2').click();">
-                        <div class="image-preview" id="image-preview2">
+                    <div class="image-upload-container" onclick="document.getElementById('image-input5').click();">
+                        <div class="image-preview" id="image-preview5">
                             <span>+</span>
                         </div>
                     </div>
-                    <input type="file" id="image-input2" accept="image/*" style="display: none;"
-                        onchange="previewImage(event, 'image-preview2')" />    
+                    <input type="file" id="image-input5" accept="image/*" style="display: none;"
+                        onchange="previewImage(event, 'image-preview5')" />    
                     <!-- <div id="summernote"></div> -->
                     <!-- <textarea rows="5" placeholder="상품에 대한 상세한 설명을 입력하세요"></textarea> -->
                 </div>
@@ -80,6 +98,6 @@
     </div>
     
 
-    <script src="productadd.js"></script>
+    <script src="../productadd/productadd.js"></script>
 </body>
 </html>
