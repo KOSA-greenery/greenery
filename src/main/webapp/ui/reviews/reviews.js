@@ -12,7 +12,7 @@ $(document).ready(function () {
         $('#charCount').text(currentLength + " / " + maxLength);
     });
 });
- 
+  
 
 // 별점 기능 
 $(document).ready(function () {
